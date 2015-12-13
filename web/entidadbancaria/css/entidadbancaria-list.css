@@ -1,0 +1,27 @@
+section,aside{
+    margin-top: 100px;
+}
+
+aside{
+    background-color: yellow;
+    font-size: 20px;
+    
+}
+
+aside ul{
+    padding: 20px;
+    list-style:none;
+}
+
+aside ul li{
+    padding-top: 20px;
+    
+}
+
+section{
+    background-color: grey;
+}
+section table{
+    margin: 50px;
+}
+

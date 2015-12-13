@@ -1,0 +1,11 @@
+
+Nombre: <input type="text" ng-model="entidadBancaria.nombre"><br>
+Codigo Entidad: <input type="text" ng-model="entidadBancaria.codigoEntidad"><br>
+Fecha Creacion: <input type="text" ng-model="entidadBancaria.fechaCreacion"><br>
+Direccion: <input type="text" ng-model="entidadBancaria.direccion"><br>
+CIF: <input type="text" ng-model="entidadBancaria.cif"><br>
+<button ng-click="insertar()">Insertar</button>
+
+<ul>
+    <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
+</ul>
