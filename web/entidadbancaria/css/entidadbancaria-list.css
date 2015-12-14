@@ -3,7 +3,7 @@ section,aside{
 }
 
 aside{
-    background-color: yellow;
+    
     font-size: 20px;
     
 }
@@ -18,10 +18,8 @@ aside ul li{
     
 }
 
-section{
-    background-color: grey;
-}
-section table{
-    margin: 50px;
+
+#tabla{
+    padding-top: 50px;
 }
 

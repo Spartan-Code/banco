@@ -1,28 +1,46 @@
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
 
+            <aside>
 
-<section>
-<form>
-    <fieldset>
-        <legend>Entidad Bancaria</legend>
-        <label for="nombre">Nombre:</label><input id="nombre" name="nombre" type="text" ng-model="entidadBancaria.nombre" /><br>
-        <label for="codigoEntidad">Codigo Entidad:</label><input id="codigoEntidad" name="codigoEntidad" type="text" ng-model="entidadBancaria.codigoEntidad" /><br>
-        <label for="fechaCreacion">Fecha Creacion:</label><input id="fechaCreacion" name="fechaCreacion" type="text" ng-model="entidadBancaria.fechaCreacion" /><br>
-        <label for="direccion">Direccion:</label><input id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" /><br>
-        <label for="cif">CIF:</label><input id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" /><br>
-        
-    </fieldset>
-</form>
-       
-<button ng-click="insertar()" class="btn btn-primary" role="button">Insertar</button>
-<button ng-click="modificar()" class="btn btn-primary" role="button">Modificar</button> 
-<a href="#/list" class="btn btn-danger" role="button">Cancelar</a>
+                <h2 class="text-center">Menu</h2>
+                <ul>
+                    <li><a href="#/list">Entidades Bancarias</a></li>
+                    <li><a href="#">Sucursales Bancarias</a></li>
 
-<ul>
-    <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
-</ul>
-</section>
+                </ul>
+
+            </aside>
+        </div>
+        <div class="col-sm-9">
+
+            <section>
+                <form>
+                    <fieldset>
+                        <legend>Entidad Bancaria</legend>
+                        <label for="nombre">Nombre:</label><input id="nombre" name="nombre" type="text" ng-model="entidadBancaria.nombre" /><br>
+                        <label for="codigoEntidad">Codigo Entidad:</label><input id="codigoEntidad" name="codigoEntidad" type="text" ng-model="entidadBancaria.codigoEntidad" /><br>
+                        <uib-datepicker ng-model="dt" class="well well-sm" ></uib-datepicker>
+                        <label for="fechaCreacion">Fecha Creacion:</label><input id="fechaCreacion" name="fechaCreacion" type="text" ng-model="entidadBancaria.fechaCreacion" /><br>
+                        <label for="direccion">Direccion:</label><input id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" /><br>
+                        <label for="cif">CIF:</label><input id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" /><br>        
+                    </fieldset>
+                </form>
+
+                <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
+                <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
+                <a href="#/list" class="btn btn-danger" role="button">Cancelar</a>
+
+                <ul>
+                    <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
+                </ul>
+            </section>            
+        </div>
+    </div>
+</div>
 
 <!--
 Nombre: <input type="text" ng-model="entidadBancaria.nombre"><br>

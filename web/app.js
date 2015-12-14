@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ngRoute']);
+var app = angular.module("app", ['ngRoute','ui.bootstrap']);
 
 app.directive('head', ['$rootScope','$compile',
     function($rootScope, $compile){

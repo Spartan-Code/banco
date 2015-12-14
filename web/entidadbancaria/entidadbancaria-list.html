@@ -1,48 +1,49 @@
 
 <div class="container">
     <div class="row">
-  <div class="col-sm-3">
-    
-    <aside>
-        
-        <h2 class="text-center">Menu</h2>
-     <ul>
-            <li><a href="#/list">Entidades Bancarias</a></li>
-            <li><a href="#">Sucursales Bancarias</a></li>
-            
-     </ul>
-    
-    </aside>
-      </div>
-        <div class="col-sm-9">
-<section>
-    
-    <h2 class="text-center">Gestion de Entidad Bancarias</h2>
-        
-        <table>
-            <tr>
-                
-                <td>nombre</td>
-                <td>Codigo Entidad</td>
-                <td>Fecha Creacion</td> 
-                <td>Direccion</td>
-                <td>Cif</td> 
-                <td>Accion</td> 
-            </tr>
-            <tr ng-repeat="entidadBancaria in entidadesBancarias">               
-                <td><a href="#/detail/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.nombre}}</a></td>  
-                <td>{{entidadBancaria.codigoEntidad}}</td> 
-                <td>{{entidadBancaria.fechaCreacion}}</td> 
-                <td>{{entidadBancaria.direccion}}</td> 
-                <td>{{entidadBancaria.cif}}</td>
-                <td><button ng-click="borrar(entidadBancaria.idEntidadBancaria)">borrar</button></td>
-            </tr>           
- </table>
- <a href="#/insert" class="btn btn-primary" role="button">Añadir</a>
- 
-        
-    
-</section>
+        <div class="col-sm-3">
+
+            <aside>
+
+                <h2 class="text-center">Menu</h2>
+                <ul>
+                    <li><a href="#/list">Entidades Bancarias</a></li>
+                    <li><a href="#">Sucursales Bancarias</a></li>
+
+                </ul>
+
+            </aside>
         </div>
-  </div>
+        <div class="col-sm-9">
+            <section>
+
+                <h2 class="text-center">Gestion de Entidad Bancarias</h2>
+            
+                <div id="tabla" class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Codigo Entidad</td>
+                        <td>Fecha Creacion</td> 
+                        <td>Direccion</td>
+                        <td>Cif</td> 
+                        <td>Accion</td> 
+                    </tr>
+                    <tr ng-repeat="entidadBancaria in entidadesBancarias">               
+                        <td><a href="#/detail/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.nombre}}</a></td>  
+                        <td>{{entidadBancaria.codigoEntidad}}</td> 
+                        <td>{{entidadBancaria.fechaCreacion}}</td> 
+                        <td>{{entidadBancaria.direccion}}</td> 
+                        <td>{{entidadBancaria.cif}}</td>
+                        <td><button ng-click="borrar(entidadBancaria.idEntidadBancaria)">borrar</button></td>
+                    </tr>           
+                </table>
+                    </div>     
+                <a href="#/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
+
+
+
+            </section>
+        </div>
+    </div>
 </div>

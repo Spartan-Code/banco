@@ -14,8 +14,9 @@ app.config(['$routeProvider', function ($routeProvider) {
         });
         
         $routeProvider.when('/insert', {
-            templateUrl: "entidadbancaria/entidadbancaria-insert.html",
-            controller: "InsertController"
+            templateUrl: "entidadbancaria/entidadbancaria-detail.html",
+            controller: "InsertController",
+            css: 'entidadbancaria/css/entidadbancaria-detail.css'
         });
     }]);
 

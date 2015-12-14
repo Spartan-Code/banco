@@ -43,7 +43,7 @@ DetailController.$inject = ['$scope', "$routeParams", '$log', 'entidadBancariaSe
 
 function DetailController($scope, $routeParams, $log, entidadBancariaService) {
 
-
+    $scope.control="detail";
     var response = entidadBancariaService.detail($routeParams.idEntidadBancaria);
 
     response.success(function (data, status, headers, config) {
@@ -83,7 +83,7 @@ InsertController.$inject = ['$scope', '$log', '$http', 'entidadBancariaService']
 
 function InsertController($scope, $log, $http, entidadBancariaService) {
 
-
+    $scope.control="insertar";
     var promise = entidadBancariaService.defaultValue();
 
     promise.then(function (response) {
