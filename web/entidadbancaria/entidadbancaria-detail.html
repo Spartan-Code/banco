@@ -1,11 +1,33 @@
-      
-        Nombre: <input type="text" ng-model="entidadBancaria.nombre"><br>
-        Codigo Entidad: <input type="text" ng-model="entidadBancaria.codigoEntidad"><br>
-        Fecha Creacion: <input type="text" ng-model="entidadBancaria.fechaCreacion"><br>
-        Direccion: <input type="text" ng-model="entidadBancaria.direccion"><br>
-        CIF: <input type="text" ng-model="entidadBancaria.cif"><br>
-        <button ng-click="modificar()">Modificar</button>      
+
+
+
+
+<section>
+<form>
+    <fieldset>
+        <legend>Entidad Bancaria</legend>
+        <label for="nombre">Nombre:</label><input id="nombre" name="nombre" type="text" ng-model="entidadBancaria.nombre" /><br>
+        <label for="codigoEntidad">Codigo Entidad:</label><input id="codigoEntidad" name="codigoEntidad" type="text" ng-model="entidadBancaria.codigoEntidad" /><br>
+        <label for="fechaCreacion">Fecha Creacion:</label><input id="fechaCreacion" name="fechaCreacion" type="text" ng-model="entidadBancaria.fechaCreacion" /><br>
+        <label for="direccion">Direccion:</label><input id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" /><br>
+        <label for="cif">CIF:</label><input id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" /><br>
+        
+    </fieldset>
+</form>
+       
+<button ng-click="insertar()" class="btn btn-primary" role="button">Insertar</button>
+<button ng-click="modificar()" class="btn btn-primary" role="button">Modificar</button> 
+<a href="#/list" class="btn btn-danger" role="button">Cancelar</a>
 
 <ul>
     <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
 </ul>
+</section>
+
+<!--
+Nombre: <input type="text" ng-model="entidadBancaria.nombre"><br>
+Codigo Entidad: <input type="text" ng-model="entidadBancaria.codigoEntidad"><br>
+Fecha Creacion: <input type="text" ng-model="entidadBancaria.fechaCreacion"><br>
+Direccion: <input type="text" ng-model="entidadBancaria.direccion"><br>
+CI1F: <input type="text" ng-model="entidadBancaria.cif"><br>
+-->
