@@ -48,6 +48,7 @@ function DetailController($scope, $routeParams, $log, entidadBancariaService) {
 
     response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
+        $scope.dt=$scope.entidadBancaria.fechaCreacion;
     }).error(function (data, status, headers, config) {
         if (status === 500) {
 //                Mostrar mensaje de error interno de servidor
@@ -58,7 +59,7 @@ function DetailController($scope, $routeParams, $log, entidadBancariaService) {
     });
     ;
     $scope.modificar = function () {
-
+        $scope.entidadBancaria.fechaCreacion=$scope.dt;
         var response = entidadBancariaService.modificar($scope.entidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -88,11 +89,12 @@ function InsertController($scope, $log, $http, entidadBancariaService) {
 
     promise.then(function (response) {
         $scope.entidadBancaria = response.data;
+        $scope.dt=$scope.entidadBancaria.fechaCreacion;
     });
 
     $scope.insertar = function () {
 
-
+        $scope.entidadBancaria.fechaCreacion=$scope.dt;
         var response = entidadBancariaService.insertar($scope.entidadBancaria);
 
         response.success(function (data, status, headers, config) {
