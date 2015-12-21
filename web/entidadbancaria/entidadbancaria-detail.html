@@ -24,29 +24,60 @@
 
                         <legend>Entidad Bancaria</legend>
                         <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
-                        <label for="nombre">Nombre:</label><br>
-                        <input  id="nombre" name="nombre" type="text" ng-model="entidadBancaria.nombre" /><br>
-                        <label for="codigoEntidad">Codigo Entidad:</label><br>
-                        <input size="4"  id="codigoEntidad" name="codigoEntidad" type="text" ng-model="entidadBancaria.codigoEntidad" /><br>
-                        <!--
-                        <label for="fechaCreacion">Fecha Creacion:</label><input id="fechaCreacion" name="fechaCreacion" type="text" ng-model="dt" /><br>
-                        -->
-                        <label for="direccion">Direccion:</label><br>
-                        <input size="50" id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" /><br>
-                        <label for="cif">CIF:</label><br>
-                        <input size="9" id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" /><br> 
-                        <label>Fecha Creacion:</label>
-                        <div id="calendario">
-                        <uib-datepicker ng-model="dt" class="well well-sm" ></uib-datepicker>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="nombre">Nombre:</label><br>
+                                <input  id="nombre" name="nombre" type="text" ng-model="entidadBancaria.nombre" /><br>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cif">CIF:</label><br>
+                                <input size="9" id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" /><br> 
+                            </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="direccion">Direccion:</label><br>
+                                <input size="50" id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" /><br>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="codigoEntidad">Codigo Entidad:</label><br>
+                                <input size="4"  id="codigoEntidad" name="codigoEntidad" type="text" ng-model="entidadBancaria.codigoEntidad" /><br>
+
+                            </div>
+                        </div>
+
+                        <!--
+                         <label for="fechaCreacion">Fecha Creacion:</label><input id="fechaCreacion" name="fechaCreacion" type="text" ng-model="dt" /><br>
+                        -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Fecha Creacion:</label>
+                                <div id="calendario">
+                                    <uib-datepicker ng-model="dt" class="well well-sm" ></uib-datepicker>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="botones" class="pull-left">
+                                    <div class="row center-block">
+                                        <div class="v">
+                                            <button ng-click="insertar()" class="btn btn-primary center-block botonesCRUD" role="button" ng-hide="control === 'detail'">Insertar</button>
+                                            <button ng-click="modificar()" class="btn btn-primary center-block botonesCRUD" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
+                                            <a href="#/entidadbancaria/list" class="btn btn-danger center-block botonesCRUD" role="button">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </fieldset>
                 </form>
 
-                <div id="botones" class="pull-right">
-                    <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
-                    <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
-                    <a href="#/entidadbancaria/list" class="btn btn-danger" role="button">Cancelar</a>
-                </div>
+
 
                 <!--<ul>
                     <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
