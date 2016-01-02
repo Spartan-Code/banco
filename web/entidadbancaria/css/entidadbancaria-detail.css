@@ -1,20 +1,23 @@
-section,aside{
+aside{
+    font-size: 20px !important;
+}
+.formulario{
+    margin: 0 auto;
+}
+.lista{
     margin-top: 100px;
 }
-
-aside ul{
-    padding: 20px;
-    list-style:none;
+.menu-entidadesBancarias{
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
-
-aside ul li{
-    padding-top: 20px;
-    
+h2{
+    margin-top: 0 !important;
 }
 
 footer{
     margin-top:100px; 
-    
+
 }
 
 label{
@@ -23,5 +26,25 @@ label{
 
 #calendario{
     width:310px;
+}
+#pie{
+    position:fixed;
+}
+
+/*--------Media Querys-------*/
+
+@media screen and (max-width: 992px) {
+    #calendario{
+        margin: 0 auto;
+    }
+    #botones{
+        margin: 0 auto !important;
+        float: none !important;
+        display: inline-block;
+    }
+    #pie{
+        position: inherit;
+
+    }
 }
 

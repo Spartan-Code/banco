@@ -56,8 +56,8 @@ aside ul li{
 /*--------Media Querys-------*/
 
 @media screen and (max-width: 992px) {
-    #pie{
-        position: inherit;
 
+    form{
+        text-align: center;
     }
 }
