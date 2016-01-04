@@ -1,0 +1,47 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+            <aside>
+
+                <h2 class="text-center">Menu</h2>
+                <ul>
+                   <li><a href="#/usuario/list">Gestionar Usuarios</a></li>                      
+                </ul>
+
+            </aside>
+        </div>
+        <div class="col-sm-9">
+
+            <section>
+
+                <form>
+                    <fieldset>
+
+                        <legend>Usuario</legend>
+                        <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
+                        <label for="nombre">Nombre:</label><br>
+                        <input  id="nombre" name="nombre" type="text" ng-model="usuario.nombre" /><br>
+                        <label for="password">Password:</label><br>
+                        <input id="password" name="password" type="text" ng-model="usuario.passwordEncrypt" /><br>                      
+                        <label for="email">Email:</label><br>
+                        <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
+                        <label for="rol">Rol:</label><br>
+                        <input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br> 
+                        
+                    </fieldset>
+                </form>
+
+                <div id="botones" class="pull-right">
+                    <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
+                    <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
+                    <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
+                </div>
+
+                
+            </section>            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+
+            <aside>
+
+                <h2 class="text-center">Menu</h2>
+                <ul>
+                    <li><a href="#/usuario/list">Gestionar Usuarios</a></li>                    
+                </ul>
+
+            </aside>
+        </div>
+        <div class="col-sm-9">
+            <section>
+
+                <h2 class="text-center">Gestion de Usuarios</h2>
+            
+                <div id="tabla" class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Password</th>
+                        <th>Email</th> 
+                        <th>Rol</th>
+                        <th>Accion</th> 
+                    </tr>
+                    <tr ng-repeat="usuario in usuarios">               
+                        <td>{{usuario.nombre}}</td>  
+                        <td>{{usuario.passwordEncrypt}}</td> 
+                        <td>{{usuario.email}}</td> 
+                        <td>{{usuario.rol}}</td> 
+                        
+                        <td>
+                            <a href="#/usuario/detail/{{usuario.idUsuario}}" class="btn btn-primary pull-right" role="button">Editar</a>
+                            <button ng-click="borrar(usuario.idUsuario)" class="btn btn-danger" role="button">borrar</button>
+                                                        
+                        </td>
+                    </tr>           
+                </table>
+                    </div>     
+                <a href="#/usuario/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
+
+
+
+            </section>
+        </div>
+    </div>
+</div>
