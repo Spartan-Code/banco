@@ -29,8 +29,8 @@
                         <label for="email">Email:</label><br>
                         <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
                         <label for="rol">Rol:</label><br>
-                        <input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br> 
-                        
+                         <!--<input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br>-->
+                         <select id="rol" name="rol" type="checkbox" ng-model="usuario.rol"><option ng-selected="true" value="Usuario">Usuario</option><option value="Administrador">Administrador</option></select><br>
                     </fieldset>
                 </form>
 
