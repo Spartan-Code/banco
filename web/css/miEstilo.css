@@ -4,17 +4,6 @@
     height: 100%;
 
 }
-#login{
-    position: relative;
-    max-width: 500px;
-    padding-top: 150px;
-}
-.login-box{
-    background-color: white;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 5px 5px 5px #080808;
-}
 
 #cabecera{
     background-color: #141414;
