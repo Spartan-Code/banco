@@ -1,23 +1,17 @@
-section,aside{
+aside{
+    font-size: 20px !important;
+}
+
+.formulario{
+    margin: 0 auto;
+}
+.lista{
     margin-top: 100px;
 }
-
-aside{
-    
-    font-size: 20px;
-    
+.menu-entidadesBancarias{
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
-
-aside ul{
-    padding: 20px;
-    list-style:none;
-}
-
-aside ul li{
-    padding-top: 20px;
-    
-}
-
 
 #tabla{
     margin-top: 50px;
@@ -29,5 +23,14 @@ th{
 
 footer{
     margin-top:100px; 
-    
+
+}
+#pie{
+    position:fixed;
+}
+
+/*--------Media Querys-------*/
+
+@media screen and (max-width: 992px) {
+
 }
