@@ -26,8 +26,8 @@
                         <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
                         <label for="nombre">Nombre:</label><br>
                         <input  id="nombre" name="nombre" type="text" ng-model="usuario.nombre" /><br>
-                        <label for="password">Password:</label><br>
-                        <input id="password" name="password" type="text" ng-model="usuario.passwordEncrypt" /><br>                      
+                        <label ng-hide="control === 'detail'"  for="password">Password:</label><br>
+                        <input ng-hide="control === 'detail'" id="password" name="password" type="text" ng-model="usuario.passwordEncrypt" /><br>                      
                         <label for="email">Email:</label><br>
                         <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
                         <label for="rol">Rol:</label><br>
