@@ -1,7 +1,7 @@
 
-EntidadBancariaListController.$inject = ['$scope', '$log', 'entidadBancariaService'];
+EntidadBancariaListController.$inject = ['$scope', '$log', 'entidadBancariaService', '$route'];
 
-function EntidadBancariaListController($scope, $log, entidadBancariaService) {
+function EntidadBancariaListController($scope, $log, entidadBancariaService, $route) {
 
 
     var response = entidadBancariaService.findAll();
@@ -10,27 +10,34 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService) {
         $scope.entidadesBancarias = data;
     }).error(function (data, status, headers, config) {
         if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+            alert("Error interno del servidor");
         }
         if (status === 400) {
-                $scope.businessMessages = data;
-            }
+            $scope.businessMessages = data;
+        }
     });
     ;
 
     $scope.borrar = function (idEntidadBancaria) {
-        var response = entidadBancariaService.delete(idEntidadBancaria);
+        var answer = confirm("¿Estas seguro de borrar esta entidad bancaria?");
+        if (answer) {
+            var response = entidadBancariaService.delete(idEntidadBancaria);
 
-        response.success(function (data, status, headers, config) {
-            $scope.entidadBancaria = data;
-        }).error(function (data, status, headers, config) {
-            if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
-            }
-            if (status === 400) {
-                $scope.businessMessages = data;
-            }
-        });
+            response.success(function (data, status, headers, config) {
+                alert("Borrado con Exito");
+                $route.reload();
+            }).error(function (data, status, headers, config) {
+                if (status === 500) {
+                    alert("Error interno del servidor");
+                }
+                if (status === 400) {
+                    $scope.businessMessages = data;
+                }
+
+            });
+        } else {
+
+        }
     };
 
 
@@ -43,23 +50,23 @@ EntidadBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 'en
 
 function EntidadBancariaDetailController($scope, $routeParams, $log, entidadBancariaService) {
 
-    $scope.control="detail";
+    $scope.control = "detail";
     var response = entidadBancariaService.detail($routeParams.idEntidadBancaria);
 
     response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
-        $scope.dt=$scope.entidadBancaria.fechaCreacion;
+        $scope.dt = $scope.entidadBancaria.fechaCreacion;
     }).error(function (data, status, headers, config) {
         if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+            alert("Error interno del servidor");
         }
         if (status === 400) {
-                $scope.businessMessages = data;
-            }
+            $scope.businessMessages = data;
+        }
     });
     ;
     $scope.modificar = function () {
-        $scope.entidadBancaria.fechaCreacion=$scope.dt;
+        $scope.entidadBancaria.fechaCreacion = $scope.dt;
         var response = entidadBancariaService.modificar($scope.entidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -67,7 +74,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, entidadBanc
             $scope.entidadBancaria = data;
         }).error(function (data, status, headers, config) {
             if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+                alert("Error interno del servidor");
             }
             if (status === 400) {
                 $scope.businessMessages = data;
@@ -84,17 +91,17 @@ EntidadBancariaInsertController.$inject = ['$scope', '$log', '$http', 'entidadBa
 
 function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaService) {
 
-    $scope.control="insertar";
+    $scope.control = "insertar";
     var promise = entidadBancariaService.defaultValue();
 
     promise.then(function (response) {
         $scope.entidadBancaria = response.data;
-        $scope.dt=$scope.entidadBancaria.fechaCreacion;
+        $scope.dt = $scope.entidadBancaria.fechaCreacion;
     });
 
     $scope.insertar = function () {
 
-        $scope.entidadBancaria.fechaCreacion=$scope.dt;
+        $scope.entidadBancaria.fechaCreacion = $scope.dt;
         var response = entidadBancariaService.insertar($scope.entidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -102,7 +109,7 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
             $scope.entidadBancaria = data;
         }).error(function (data, status, headers, config) {
             if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+                alert("Error interno del servidor");
             }
             if (status === 400) {
                 $scope.businessMessages = data;

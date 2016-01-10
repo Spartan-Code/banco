@@ -1,8 +1,8 @@
 
 
-UsuarioListController.$inject = ['$scope', '$log', 'usuarioService'];
+UsuarioListController.$inject = ['$scope', '$log', 'usuarioService', '$route'];
 
-function UsuarioListController($scope, $log, usuarioService) {
+function UsuarioListController($scope, $log, usuarioService,$route) {
 
 
     var response = usuarioService.findAll();
@@ -11,27 +11,33 @@ function UsuarioListController($scope, $log, usuarioService) {
         $scope.usuarios = data;
     }).error(function (data, status, headers, config) {
         if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+            alert("Error interno del servidor");
         }
         if (status === 400) {
-                $scope.businessMessages = data;
-            }
+            $scope.businessMessages = data;
+        }
     });
     ;
 
     $scope.borrar = function (idUsuario) {
-        var response = usuarioService.delete(idUsuario);
+        var answer = confirm("¿Estas seguro de borrar este Usuario?");
+        if (answer) {
+            var response = usuarioService.delete(idUsuario);
 
-        response.success(function (data, status, headers, config) {
-            $scope.usuario = data;
-        }).error(function (data, status, headers, config) {
-            if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
-            }
-            if (status === 400) {
-                $scope.businessMessages = data;
-            }
-        });
+            response.success(function (data, status, headers, config) {
+                alert("Borrado con Exito");
+                $route.reload();
+            }).error(function (data, status, headers, config) {
+                if (status === 500) {
+                    alert("Error interno del servidor");
+                }
+                if (status === 400) {
+                    $scope.businessMessages = data;
+                }
+            });
+        } else {
+
+        }
     };
 
 
@@ -44,22 +50,22 @@ UsuarioDetailController.$inject = ['$scope', "$routeParams", '$log', 'usuarioSer
 
 function UsuarioDetailController($scope, $routeParams, $log, usuarioService) {
 
-    $scope.control="detail";
+    $scope.control = "detail";
     var response = usuarioService.detail($routeParams.idUsuario);
 
     response.success(function (data, status, headers, config) {
-        $scope.usuario = data;        
+        $scope.usuario = data;
     }).error(function (data, status, headers, config) {
         if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+            alert("Error interno del servidor");
         }
         if (status === 400) {
-                $scope.businessMessages = data;
-            }
+            $scope.businessMessages = data;
+        }
     });
     ;
     $scope.modificar = function () {
-        
+
         var response = usuarioService.modificar($scope.usuario);
 
         response.success(function (data, status, headers, config) {
@@ -67,7 +73,7 @@ function UsuarioDetailController($scope, $routeParams, $log, usuarioService) {
             $scope.usuario = data;
         }).error(function (data, status, headers, config) {
             if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+                alert("Error interno del servidor");
             }
             if (status === 400) {
                 $scope.businessMessages = data;
@@ -84,12 +90,12 @@ UsuarioInsertController.$inject = ['$scope', '$log', '$http', 'usuarioService'];
 
 function UsuarioInsertController($scope, $log, $http, usuarioService) {
 
-    $scope.control="insertar";
-   
+    $scope.control = "insertar";
+
 
     $scope.insertar = function () {
 
-        
+
         var response = usuarioService.insertar($scope.usuario);
 
         response.success(function (data, status, headers, config) {
@@ -97,7 +103,7 @@ function UsuarioInsertController($scope, $log, $http, usuarioService) {
             $scope.usuario = data;
         }).error(function (data, status, headers, config) {
             if (status === 500) {
-//                Mostrar mensaje de error interno de servidor
+                alert("Error interno del servidor");
             }
             if (status === 400) {
                 $scope.businessMessages = data;
