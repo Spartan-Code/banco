@@ -24,6 +24,8 @@
 
                         <legend>Usuario</legend>
                         <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
+                        <label for="nickName">NickName:</label><br>
+                        <input  id="nickName" name="nickName" type="text" ng-model="usuario.nickName" /><br>
                         <label for="nombre">Nombre:</label><br>
                         <input  id="nombre" name="nombre" type="text" ng-model="usuario.nombre" /><br>
                         <label ng-hide="control === 'detail'"  for="password">Password:</label><br>
@@ -32,7 +34,7 @@
                         <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
                         <label for="rol">Rol:</label><br>
                          <!--<input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br>-->
-                         <select id="rol" name="rol" type="checkbox" ng-model="usuario.rol"><option ng-selected="true" value="Usuario">Usuario</option><option value="Administrador">Administrador</option></select><br>
+                         <select id="rol" name="rol" type="checkbox" ng-model="usuario.rol" ng-value="{{usuario.rol}}"><option value="Usuario">Usuario</option><option value="Administrador">Administrador</option></select><br>
                     </fieldset>
                 </form>
 
