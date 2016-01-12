@@ -1,18 +1,24 @@
 
-LoginController.$inject = ['$scope', '$log', 'loginService', '$route'];
+LoginController.$inject = ['$scope', '$log', 'loginService','$window'];
 
-function LoginController($scope, $log, loginService, $route) {
+function LoginController($scope, $log, loginService,$window) {
 
-
+    $scope.usuario={
+        nickName:"",
+        passwordEncrypt:""
+    };
     
 
     $scope.acceder = function () {
         
-        
+            
             var response = loginService.acceder($scope.usuario);
 
             response.success(function (data, status, headers, config) {
                 alert("Logueado");
+                if(data.rol === "Trabajador"){
+                    $window.location="../trabajadores/index.html#/";
+                }
 //                $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
