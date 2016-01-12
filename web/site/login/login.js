@@ -18,8 +18,15 @@ function LoginController($scope, $log, loginService,$window) {
                 alert("Logueado");
                 if(data.rol === "Trabajador"){
                     $window.location="../trabajadores/index.html#/";
+                }else{
+                    
                 }
-//                $route.reload();
+                if(data.rol=== "Cliente"){
+                    $window.location="../clientes/index.html#/";
+                }else{
+                    
+                }
+
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
                     alert("Error interno del servidor");
