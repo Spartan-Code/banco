@@ -50,6 +50,19 @@ UsuarioDetailController.$inject = ['$scope', "$routeParams", '$log', 'usuarioSer
 
 function UsuarioDetailController($scope, $routeParams, $log, usuarioService, $location) {
 
+    $scope.roles = [
+        {
+            value: "Trabajador",
+            nombre: "Trabajador"
+        },
+        {
+            value: "Cliente",
+            nombre: "Cliente"
+        }
+    ];
+
+    
+
     $scope.control = "detail";
     var response = usuarioService.detail($routeParams.idUsuario);
 
@@ -90,6 +103,20 @@ app.controller("UsuarioDetailController", UsuarioDetailController);
 UsuarioInsertController.$inject = ['$scope', '$log', '$http', 'usuarioService', '$location'];
 
 function UsuarioInsertController($scope, $log, $http, usuarioService, $location) {
+
+
+    $scope.roles = [
+        {
+            value: "Trabajador",
+            nombre: "Trabajador"
+        },
+        {
+            value: "Cliente",
+            nombre: "Cliente"
+        }
+    ];
+
+
 
     $scope.control = "insertar";
 

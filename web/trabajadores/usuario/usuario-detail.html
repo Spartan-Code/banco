@@ -34,7 +34,7 @@
                         <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
                         <label for="rol">Rol:</label><br>
                          <!--<input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br>-->
-                         <select id="rol" name="rol" type="checkbox" ng-model="usuario.rol" ng-value="{{usuario.rol}}"><option value="Cliente">Cliente</option><option value="Trabajador">Trabajador</option></select><br>
+                         <select id="rol" name="rol"  ng-model="usuario.rol" ng-options="rol.value as rol.nombre for rol in roles"><option value="">--Selecciona un rol--</option></select><br>
                     </fieldset>
                 </form>
 
