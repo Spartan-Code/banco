@@ -1,0 +1,14 @@
+.jumbotron {
+    margin-top: 50px;
+    margin-bottom: 0;
+    height: 710px;
+    background-image: url("../../img/fondosite2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #464646;
+}
+
+footer {
+    background-color: #141414;
+}
+
