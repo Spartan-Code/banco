@@ -26,45 +26,48 @@
 
         <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!-- Custom styles for this File -->
-        <link href="css/miEstilo.css" rel="stylesheet">
+        <link href="../css/estilos-globales.css" rel="stylesheet" type="text/css" />
+        <link href="../css/estilos-trabajadores.css" rel="stylesheet" type="text/css" /> 
     </head>
     <body>
-        <div id="wrap">
-
-            <nav id="cabecera" class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#/main">Spartan Bank</a>
-                    </div>
-                    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-                        <ul class="nav navbar-nav">
-                            <li><a  href="#/entidadbancaria/list">Gestiones Bancarias</a></li>
-                            <li><a  href="#/usuario/list">Gestion de Usuarios</a></li>
-                        </ul>
-                    </div>
+        <nav id="cabecera" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="../img/logo2.png" class="img-responsive" id="logo" /></a>
                 </div>
-            </nav>
-
-            <div ng-view></div>
-
-            <footer id="pie" class="footer">
-                <div class="container">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Politica de Privacidad</a></li>
-                        <li><a href="#">Sobre Nosotros</a></li>
+                <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a  href="#/entidadbancaria/list">Gestiones Bancarias</a></li>
+                        <li><a  href="#/usuario/list">Gestion de Usuarios</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Servicio Tecnico</a></li>
+                        <li><a  href="#">About us</a></li>
+                        <li><a  href="#">Contact</a></li>
+                        <li><a  href="#">Help</a></li>
                     </ul>
                 </div>
-            </footer>
+            </div>
+        </nav>
 
-        </div>
+        <div ng-view></div>
+
+        <!--<footer id="pie" class="footer">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Politica de Privacidad</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Servicio Tecnico</a></li>
+                </ul>
+            </div>
+        </footer>-->
+
     </body>
 </html>
