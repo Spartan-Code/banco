@@ -39,8 +39,6 @@ function UsuarioListController($scope, $log, usuarioService, $route) {
 
         }
     };
-
-
 }
 ;
 app.controller("UsuarioListController", UsuarioListController);

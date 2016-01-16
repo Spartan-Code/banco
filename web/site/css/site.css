@@ -9,14 +9,15 @@
 }
 
 footer {
-    background-image: linear-gradient(to bottom,#330000 0,#4D0000 100%);
-    color: #A9905A;
+    background-image: linear-gradient(to bottom,#1A0000 0,#330000 100%);
+    color: #8C8C8C;
     font-size: 12px;
-    border-top: 1.5px solid white;
+    font-weight: bold;
+    border-top: 0.1px solid #404040;
 }
 
 footer a {
-    color: grey;
+    color: #8C8C8C;
 }
 
 footer a:hover {

@@ -45,9 +45,9 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
 app.controller("EntidadBancariaListController", EntidadBancariaListController);
 
 
-EntidadBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 'entidadBancariaService','$location'];
+EntidadBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 'entidadBancariaService', '$location'];
 
-function EntidadBancariaDetailController($scope, $routeParams, $log, entidadBancariaService,$location) {
+function EntidadBancariaDetailController($scope, $routeParams, $log, entidadBancariaService, $location) {
 
     $scope.control = "detail";
     var response = entidadBancariaService.detail($routeParams.idEntidadBancaria);
@@ -70,7 +70,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, entidadBanc
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Entidad bancaria con CIF "+data.codigoEntidad+" ha sido actualizada con exito.");
+            alert("Entidad bancaria con CIF " + data.codigoEntidad + " ha sido actualizada con exito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -87,9 +87,9 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, entidadBanc
 app.controller("EntidadBancariaDetailController", EntidadBancariaDetailController);
 
 
-EntidadBancariaInsertController.$inject = ['$scope', '$log', '$http', 'entidadBancariaService','$location'];
+EntidadBancariaInsertController.$inject = ['$scope', '$log', '$http', 'entidadBancariaService', '$location'];
 
-function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaService,$location) {
+function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaService, $location) {
 
     $scope.control = "insertar";
     var promise = entidadBancariaService.defaultValue();
@@ -106,7 +106,7 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Entidad bancaria con CIF "+data.codigoEntidad+" ha sido insertada con exito.");
+            alert("Entidad bancaria con CIF " + data.codigoEntidad + " ha sido insertada con exito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
