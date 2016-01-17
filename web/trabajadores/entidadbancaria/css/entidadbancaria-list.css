@@ -29,33 +29,8 @@ footer{
     position:fixed;
 }*/
 
-body {
-    /*background-color: #e6dec6;*/
-    background-color: #cfd9c8;
-/*background-color: #E6E6E6;*/
-}
-
-.panel {
-    margin-top: 150px;
-}
-
-.panel-heading {
-    border-bottom: none;
-    background-color: white !important;
-}
-
-.table-responsive {
-    margin-bottom: -10px;
-}
-
-/*.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
-    background-color: red;
+/*body {
+    /*background-color: #e6dec6;
+    background-color: #EAEEE7;
+/*background-color: #E6E6E6;
 }*/
-
-
-
-
-
-
-
-

@@ -8,12 +8,21 @@
     background-color: #464646;
 }
 
+.eslogan {
+    font-weight: bold;
+}
+
+.btn-default {
+    margin-top: 50px;
+}
+
 footer {
     background-image: linear-gradient(to bottom,#1A0000 0,#330000 100%);
+    background-color: red !important;
     color: #8C8C8C;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
-    border-top: 0.1px solid #404040;
+    border-top: 1px solid #404040;
 }
 
 footer a {
@@ -26,5 +35,6 @@ footer a:hover {
 }
 
 footer a:visited {
-    background-color: #141414;
+    color: #8C8C8C;
+    background-color: #1A0000 !important;
 }
