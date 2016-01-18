@@ -1,7 +1,12 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/cuentabancaria/list', {
+            templateUrl: "cuentabancaria/cuentabancaria-list.html",
+            controller: "CuentaBancariaListController",
+            css: 'cuentabancaria/css/cuentabancaria-list.css'
+        });
+
+        
+    }]);
 
 
