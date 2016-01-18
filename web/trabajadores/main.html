@@ -1,23 +1,52 @@
-<section>
-
-    <!--  Implementacion interesante (Comentar)
-  <picture>
-        <source
-          media="(min-width: 650px)"
-          srcset="images/kitten-stretching.png">
-        <source
-          media="(min-width: 465px)"
-          srcset="images/kitten-sitting.png">
-        <img
-          src="images/kitten-curled.png"
-          alt="a cute kitten">
-  </picture>
-    -->
-
-    <img id="esparta" class="img-responsive" src="img/esparta.jpg" alt="Imagen Main">
-
-    
-
-
-
-</section>
+<div id="contenedor-main" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Bienvenido administrador</h2>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div id="panel-main" class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="active"><a id="tab-activa" href="#/main">Menú de Gestión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-1">
+                            <a href="#/entidadbancaria/list">
+                                <div class="hero-widget well well-sm">
+                                    <div class="icon">
+                                        <i class="fa fa-university"></i>
+                                    </div>
+                                    <div class="text">
+                                        <label class="text-muted">Gestiones Bancarias</label>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-5">
+                            <a href="#/usuario/list">
+                                <div class="hero-widget well well-sm">
+                                    <div class="icon">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <div class="text">
+                                        <label class="text-muted">Gestion de Usuarios</label>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

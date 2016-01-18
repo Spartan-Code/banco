@@ -1,113 +1,58 @@
-<!--
-
-<div class="container lista">
-    <div class="row">
- <div class="col-lg-3 col-md-12">
-            <aside>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 text-center"><h2 class="text-center">Menu</h2></div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="col-lg-12 text-center menu-entidadesBancarias"><a href="#/usuario/list">Gestionar Usuarios</a></div>
-
-                    </div>
-
-                </div>
-            </aside>
-
+<div class="container">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a id="tab-activa" href="#/usuario/insert">Usuarios</a></li>
+            </ul>
         </div>
-        <div class="col-lg-9 col-md-12">
-
-            <section>
-
-                <form>
-                    <fieldset>
-
-                        <legend>Usuario</legend>
-                        <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
-                        <label for="nickName">NickName:</label><br>
-                        <input  id="nickName" name="nickName" type="text" ng-model="usuario.nickName" /><br>
-                        <label for="nombre">Nombre:</label><br>
-                        <input  id="nombre" name="nombre" type="text" ng-model="usuario.nombre" /><br>
-                        <label ng-hide="control === 'detail'"  for="password">Password:</label><br>
-                        <input ng-hide="control === 'detail'" id="password" name="password" type="text" ng-model="usuario.passwordEncrypt" /><br>                      
-                        <label for="email">Email:</label><br>
-                        <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
-                        <label for="rol">Rol:</label><br>
-<!--<input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br>-->
-<!--<select id="rol" name="rol" type="checkbox" ng-model="usuario.rol" ng-value="{{usuario.rol}}"><option value="Cliente">Cliente</option><option value="Trabajador">Trabajador</option></select><br>
-<!-- </fieldset>
-</form>
-
-<div id="botones">
- <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
- <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
- <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
-</div>
-
-
-</section>            
-</div>
-</div>
-</div>-->
-
-<!--NUEVA INTERFAZ-->
-<section>
-    <div class="container">
-        <div class="panel panel-default">
-            <!-- Default panel contents -->
-            <div class="panel-heading">
-                <ul class="nav nav-tabs">
-                    <li role="presentation" class="active"><a href="#/usuario/insert">Usuarios</a></li>
-                </ul>
-            </div>
-            <div class="panel-body">
-                <form>
-                    <div class="row">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h4>Datos de Usuario</h4>
-                            <hr />
-                        </div>
+        <div class="panel-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h4>Datos de Usuario</h4>
+                        <hr />
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-5 col-md-offset-1">
-                            <label for="nombre">Nombre completo</label>
-                            <input id="nombre" name="nombre" type="text" ng-model="usuario.nombre" class="form-control">
-                        </div>
-                        <div class="form-group col-md-5">
-                            <label for="nif">NIF</label>
-                            <input id="nif" name="nif" type="text" ng-model="usuario.nif" class="form-control">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5 col-md-offset-1">
+                        <label for="nombre">Nombre completo</label>
+                        <input id="nombre" name="nombre" type="text" ng-model="usuario.nombre" class="form-control">
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-5 col-md-offset-1">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="text" ng-model="usuario.email" class="form-control">
-                        </div>
-                        <div class="form-group col-md-5">
-                            <label for="rol">Rol</label>
-                            <select id="rol" name="rol" ng-model="usuario.rol" ng-options="rol.value as rol.nombre for rol in roles" class="form-control">
-                                <option value="">--Selecciona un rol--</option>
-                            </select>
-                        </div>
+                    <div class="form-group col-md-5">
+                        <label for="nif">NIF</label>
+                        <input id="nif" name="nif" type="text" ng-model="usuario.nif" class="form-control">
                     </div>
-                    <div class="row">
-                        <div class="form-group col-md-5 col-md-offset-1">
-                            <label for="nickName">Nickname</label>
-                            <input id="nickName" name="nickName" type="text" ng-model="usuario.nickName" class="form-control">
-                        </div>
-                        <div class="form-group col-md-5">
-                            <label ng-hide="control === 'detail'" for="password">Password</label>
-                            <input ng-hide="control === 'detail'" id="password" name="password" type="password" ng-model="usuario.passwordEncrypt" class="form-control">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5 col-md-offset-1">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="text" ng-model="usuario.email" class="form-control">
                     </div>
-                </form>
-            </div>
-            <uib-alert ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</uib-alert>
-            <div class="panel-footer text-right">
-                <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
-                <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
-                <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
-            </div>
+                    <div class="form-group col-md-5">
+                        <label for="rol">Rol</label>
+                        <select id="rol" name="rol" ng-model="usuario.rol" ng-options="rol.value as rol.nombre for rol in roles" class="form-control">
+                            <option value="">--Selecciona un rol--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5 col-md-offset-1">
+                        <label for="nickName">Nickname</label>
+                        <input id="nickName" name="nickName" type="text" ng-model="usuario.nickName" class="form-control">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label ng-hide="control === 'detail'" for="password">Password</label>
+                        <input ng-hide="control === 'detail'" id="password" name="password" type="password" ng-model="usuario.passwordEncrypt" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <uib-alert ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</uib-alert>
+        <div class="panel-footer text-right">
+            <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
+            <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
+            <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
         </div>
     </div>
-</section>
+</div>
