@@ -1,4 +1,4 @@
-aside{
+/*aside{
     font-size: 20px !important;
 }
 .formulario{
@@ -33,13 +33,13 @@ label{
 
 /*--------Media Querys-------*/
 
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 992px) {
     #calendario{
         margin: 0 auto;
     }
     #botones{
         text-align: center;
     }
-}
+}*/
 
 

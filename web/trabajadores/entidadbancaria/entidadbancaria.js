@@ -45,9 +45,11 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
 app.controller("EntidadBancariaListController", EntidadBancariaListController);
 
 
+
 EntidadBancariaDetailController.$inject = ['$scope', "$routeParams", '$log','sucursalBancariaService', 'entidadBancariaService', '$location','$route'];
 
 function EntidadBancariaDetailController($scope, $routeParams, $log,sucursalBancariaService, entidadBancariaService, $location,$route) {
+
 
     $scope.control = "detail";
     var response = entidadBancariaService.detail($routeParams.idEntidadBancaria);
@@ -138,6 +140,23 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
         $scope.entidadBancaria = response.data;
         $scope.dt = $scope.entidadBancaria.fechaCreacion;
     });
+
+    $scope.open1 = function () {
+        $scope.popup1.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1,
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+    $scope.popup1 = {
+        opened: false
+    };
 
     $scope.insertar = function () {
 

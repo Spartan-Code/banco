@@ -1,0 +1,21 @@
+.panel {
+    margin-top: 25px;
+    border-color: #CCCCCC;
+}
+
+.panel-heading {
+    padding: 15px 0 !important;
+    background-color: #F2F2F2 !important;
+}
+
+.panel-body {
+    padding-top: 25px !important;
+    padding-bottom: 30px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+form button {
+    margin-top: 30px;
+}
+
