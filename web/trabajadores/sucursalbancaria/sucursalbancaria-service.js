@@ -1,6 +1,13 @@
 function SucursalBancariaService($http, $q) {
 
+     this.detail = function (idSucursalBancaria) {
+        var config = {
+            method: "GET",
+            url: "/banco_api/api/sucursalbancaria/" + idSucursalBancaria
+        };
 
+        return $http(config);
+    };
 
     this.findAll = function () {
         var config = {
@@ -20,6 +27,17 @@ function SucursalBancariaService($http, $q) {
 
         return $http(config);
     };
+    
+    this.modificar = function (sucursalBancaria) {
+        var config = {
+            method: "PUT",
+            url: "/banco_api/api/sucursalbancaria",
+            data: sucursalBancaria
+        };
+
+        return $http(config);
+    };
+    
     
     this.findByidEntidadBancaria = function (idEntidadBancaria) {
         var config = {

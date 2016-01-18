@@ -4,7 +4,7 @@
 
 SucursalBancariaInsertController.$inject = ['$scope', '$log', '$http','sucursalBancariaService', '$routeParams', '$location'];
 
-function SucursalBancariaInsertController($scope, $log, $http,sucursalBancariaService, $routeParams, usuarioService, $location) {
+function SucursalBancariaInsertController($scope, $log, $http,sucursalBancariaService, $routeParams,  $location) {
 
     $scope.sucursalBancaria = {
                
@@ -21,13 +21,13 @@ $scope.control = "insertar";
 
 $scope.insertar = function () {
 
-    $scope.sucursalBancaria.fechaCreacion = $scope.dt;
+    
     var response = sucursalBancariaService.insertar($scope.sucursalBancaria);
 
     response.success(function (data, status, headers, config) {
         $scope.businessMessages = [];
         alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido insertado con exito.");
-//        $location.path('/usuario/list');
+        $location.path('/entidadbancaria/list');
     }).error(function (data, status, headers, config) {
         if (status === 500) {
             alert("Error interno del servidor");
@@ -42,3 +42,44 @@ $scope.insertar = function () {
 
 app.controller("SucursalBancariaInsertController", SucursalBancariaInsertController);
 
+
+SucursalBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 'sucursalBancariaService', '$location'];
+
+function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBancariaService, $location) {
+
+    $scope.control = "detail";
+    var response = sucursalBancariaService.detail($routeParams.idSucursalBancaria);
+
+    response.success(function (data, status, headers, config) {
+        $scope.sucursalBancaria = data;
+        
+    }).error(function (data, status, headers, config) {
+        if (status === 500) {
+            alert("Error interno del servidor");
+        }
+        if (status === 400) {
+            $scope.businessMessages = data;
+        }
+    });
+    ;
+    $scope.modificar = function () {
+        
+        var response = sucursalBancariaService.modificar($scope.sucursalBancaria);
+
+        response.success(function (data, status, headers, config) {
+            $scope.businessMessages = [];
+            alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido actualizada con exito.");
+            $location.path('/entidadbancaria/list');
+        }).error(function (data, status, headers, config) {
+            if (status === 500) {
+                alert("Error interno del servidor");
+            }
+            if (status === 400) {
+                $scope.businessMessages = data;
+            }
+        });
+    };
+}
+;
+
+app.controller("SucursalBancariaDetailController", SucursalBancariaDetailController);

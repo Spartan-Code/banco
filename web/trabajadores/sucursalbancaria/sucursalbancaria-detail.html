@@ -38,7 +38,7 @@
                         <input id="email" name="email" type="text" ng-model="sucursalBancaria.email" /><br>
                         <label>Fecha Creacion:</label>
                         <div id="calendario">
-                        <uib-datepicker ng-model="dt" class="well well-sm" ></uib-datepicker>
+                        <uib-datepicker ng-model="sucursalBancaria.fechaCreacion" class="well well-sm" ></uib-datepicker>
                         </div>
                     </fieldset>
                 </form>
@@ -46,7 +46,7 @@
                 <div id="botones">
                     <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
                     <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
-                    <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
+                    <a href="#/entidadbancaria/list" class="btn btn-danger" role="button">Cancelar</a>
                 </div>
 
                 
