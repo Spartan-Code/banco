@@ -48,8 +48,37 @@
                     <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
                     <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
                     <a href="#/entidadbancaria/list" class="btn btn-danger" role="button">Cancelar</a>
-                </div>
-
+                </div >
+                 <br><br><br><br>
+                 <div ng-hide="control === 'insertar'">
+                <div id="tabla" class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Codigo Sucursal</th>
+                        <th>Fecha Creacion</th> 
+                        <th>Direccion</th>
+                        <th>Poblacion</th> 
+                        <th>Accion</th> 
+                    </tr>
+                    <tr ng-repeat="sucursalBancaria in sucursalesBancarias">               
+                        <td>{{sucursalBancaria.nombre}}</td>  
+                        <td>{{sucursalBancaria.codigoSucursal}}</td> 
+                        <td>{{sucursalBancaria.fechaCreacion}}</td> 
+                        <td>{{sucursalBancaria.direccion}}</td> 
+                        <td>{{sucursalBancaria.poblacion}}</td>
+                        <td>
+                             <button ng-click="borrar(sucursalBancaria.idSucursalBancaria)" class="btn btn-danger" role="button">borrar</button>
+                            <a href="#/entidadbancaria/{{entidadBancaria.idEntidadBancaria}}/sucursalbancaria/detail/{{sucursalBancaria.idSucursalBancaria}}" class="btn btn-primary pull-right" role="button">Editar</a>
+                            
+                                                        
+                        </td>
+                    </tr>           
+                </table>
+                    </div>
+                
+                 <a href="#/entidadbancaria/{{entidadBancaria.idEntidadBancaria}}/sucursalbancaria/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
+                 </div>
                 <!--<ul>
                     <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
                 </ul>-->

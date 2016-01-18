@@ -8,6 +8,15 @@ function SucursalBancariaService($http, $q) {
 
         return $http(config);
     };
+    
+    this.delete = function (idSucursalBancaria) {
+        var config = {
+            method: "DELETE",
+            url: "/banco_api/api/sucursalbancaria/" + idSucursalBancaria
+        };
+
+        return $http(config);
+    };
 
     this.findAll = function () {
         var config = {
