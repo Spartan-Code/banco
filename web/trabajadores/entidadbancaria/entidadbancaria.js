@@ -99,6 +99,23 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
         $scope.dt = $scope.entidadBancaria.fechaCreacion;
     });
 
+    $scope.open1 = function () {
+        $scope.popup1.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1,
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+    $scope.popup1 = {
+        opened: false
+    };
+
     $scope.insertar = function () {
 
         $scope.entidadBancaria.fechaCreacion = $scope.dt;

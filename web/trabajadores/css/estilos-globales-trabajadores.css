@@ -1,5 +1,6 @@
 body {
-    background-color: #EAEEE7;
+    /*background-color: #EAEEE7;*/
+    background-color: #D0D8CA;
 }
 
 section {
@@ -89,7 +90,8 @@ section {
 }
 
 .panel-footer {
-    background-color: #F2F2F2 !important;
+    /*background-color: #F2F2F2 !important;*/
+    background-color: #D9D9D9 !important;
 }
 
 .table-responsive {
