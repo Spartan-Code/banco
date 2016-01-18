@@ -12,7 +12,9 @@
                 <label for="passwordEncrypt">Password</label>
                 <input id="passwordEncrypt" name="passwordEncrypt" type="password" ng-model="usuario.passwordEncrypt" class="form-control">
             </div>
-            <uib-alert ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</uib-alert>
+            <div class="alert alert-danger" role="alert" ng-repeat="businessMessage in businessMessages">
+                {{businessMessage.message}}
+            </div>
             <button ng-click="acceder()" class="btn btn-lg btn-success btn-block">Log In</button>
         </form>
     </div>

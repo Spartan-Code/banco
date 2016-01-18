@@ -91,47 +91,41 @@ CI1F: <input type="text" ng-model="entidadBancaria.cif"><br>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" name="nombre" type="text" ng-model="usuario.nombre" class="form-control">
+                        <input id="nombre" name="nombre" type="text" ng-model="entidadBancaria.nombre" class="form-control">
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="nif">Codigo</label>
-                        <input id="nif" name="nif" type="text" ng-model="usuario.nif" class="form-control">
+                        <label for="codigoEntidad">Codigo</label>
+                        <input id="codigoEntidad" name="codigoEntidad" type="text" ng-model="entidadBancaria.codigoEntidad" class="form-control">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
-                        <label for="email">CIF</label>
-                        <input id="email" name="email" type="text" ng-model="usuario.email" class="form-control">
+                        <label for="cif">CIF</label>
+                        <input id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" class="form-control">
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="rol">Direccion</label>
-                        <select id="rol" name="rol" ng-model="usuario.rol" ng-options="rol.value as rol.nombre for rol in roles" class="form-control">
-                            <option value="">--Selecciona un rol--</option>
-                        </select>
+                        <label for="direccion">Direccion</label>
+                        <input id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" class="form-control">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
-                        <label for="nickName">Fecha de creación</label>
+                        <label for="fechaCreacion">Fecha de creación</label>
                         <p class="input-group">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" show-button-bar="false" show-weeks="false" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" show-button-bar="false" show-weeks="false" date-disabled="disabled(date, mode)" ng-required="true" alt-input-formats="altInputFormats" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
                         </p>
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label ng-hide="control === 'detail'" for="password">Password</label>
-                        <input ng-hide="control === 'detail'" id="password" name="password" type="password" ng-model="usuario.passwordEncrypt" class="form-control">
                     </div>
                 </div>
             </form>
         </div>
         <uib-alert ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</uib-alert>
         <div class="panel-footer text-right">
-            <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
+            <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar Entidad Bancaria</button>
             <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
-            <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
+            <a href="#/entidadbancaria/list" class="btn btn-danger" role="button">Cancelar</a>
         </div>
     </div>
 </div>

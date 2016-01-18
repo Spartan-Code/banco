@@ -17,7 +17,10 @@
                             <th>Fecha Creacion</th> 
                             <th>Direccion</th>
                             <th>Cif</th> 
-                            <th>Accion</th> 
+                            <th>
+                                <a href="#/entidadbancaria/insert" class="btn btn-primary" role="button">Editar</a>
+                                <button ng-click="borrar(entidadBancaria.idEntidadBancaria)" class="btn btn-danger" role="button">Borrar</button>
+                            </th> 
                         </tr>
                         <tr>
                             <th>Nombre</th>
@@ -53,7 +56,7 @@
         </div>
 
         <div class="panel-footer text-right">
-            <a href="#/entidadbancaria/insert" class="btn btn-primary" role="button">Añadir</a>
+            <a href="#/entidadbancaria/insert" class="btn btn-primary" role="button">Nueva Entidad Bancaria</a>
         </div>
     </div>
 </div>
