@@ -1,79 +1,39 @@
-<!--
-            
-                <div id="tabla" class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <tr>
-                        <th>NickName</th>
-                        <th>Nombre</th> 
-                        <th>Email</th> 
-                        <th>Rol</th>
-                        <th>Accion</th> 
-                    </tr>
-                    <tr ng-repeat="usuario in usuarios">               
-                        <td>{{usuario.nickName}}</td>
-                        <td>{{usuario.nombre}}</td>   
-                        <td>{{usuario.email}}</td> 
-                        <td>{{usuario.rol}}</td> 
-                        
-                        <td>
-                            <a href="#/usuario/detail/{{usuario.idUsuario}}" class="btn btn-primary pull-right" role="button">Editar</a>
-                            <button ng-click="borrar(usuario.idUsuario)" class="btn btn-danger" role="button">borrar</button>
-                                                        
-                        </td>
-                    </tr>           
-                </table>
-                    </div>     
-                <a href="#/usuario/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
-            </section>
-        </div>
-    </div>
-</div>-->
-
-<!--NUEVA INTERFAZ-->
-
 <div class="container">
     <div class="panel panel-default">
-        <!-- Default panel contents -->
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a id="tab-activa" href="#/usuario/list">Usuarios</a></li>
+                <li role="presentation" class="active"><a class="tab-activa" href="#/usuario/list">Usuarios</a></li>
             </ul>
         </div>
         <div class="panel-body">
-            <!-- Table -->
             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-hover">
                     <tbody>
                         <tr>
-                            <th>Nickname</th>
-                            <th>Nombre Completo</th>
-                            <th>NIF</th>
-                            <th>Email</th>
-                            <th>Rol</th>
-                            <th>Accion</th>
+                            <th class="text-center">Nickname</th>
+                            <th class="text-center">Nombre Completo</th>
+                            <th class="text-center">NIF</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Rol</th>
+                            <th class="text-center">Accion</th>
                         </tr>
-                        <tr>
-                            <th>Nickname</th>
-                            <th>Nombre Completo</th>
-                            <th>NIF</th>
-                            <th>Email</th>
-                            <th>Rol</th>
-                            <th>Accion</th>
-                        </tr>
-                        <tr>
-                            <th>Nickname</th>
-                            <th>Nombre Completo</th>
-                            <th>NIF</th>
-                            <th>Email</th>
-                            <th>Rol</th>
-                            <th>Accion</th> 
-                        </tr>
+                        <tr ng-repeat="usuario in usuarios">               
+                            <td class="text-center">{{usuario.nickName}}</td>
+                            <td class="text-center">{{usuario.nombre}}</td> 
+                            <td class="text-center">{{usuario.nif}}</td>   
+                            <td class="text-center">{{usuario.email}}</td>
+                            <td class="text-center">{{usuario.rol}}</td> 
+                            <td class="text-center">
+                                <a href="#/usuario/detail/{{usuario.idUsuario}}" class="btn btn-primary" role="button">Editar</a>
+                                <button ng-click="borrar(usuario.idUsuario)" class="btn btn-danger" role="button">Borrar</button>
+                            </td>
+                        </tr>         
                     </tbody>     
                 </table>
             </div>
         </div>
         <div class="panel-footer text-right">
-            <a href="#/usuario/insert" class="btn btn-primary" role="button">Añadir</a>
+            <a href="#/usuario/insert" class="btn btn-primary" role="button">Nuevo Usuario</a>
         </div>
     </div>
 </div>

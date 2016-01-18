@@ -1,10 +1,9 @@
 <div class="container">
     <div class="panel panel-default">
-        <!-- Default panel contents -->
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a id="tab-activa" href="#/entidadbancaria/list">Entidades Bancarias</a></li>
-                <li role="presentation"><a id="tab-inactiva" href="#/usuario/list">Cuentas Bancarias</a></li>
+                <li role="presentation" class="active"><a class="tab-activa" href="#/entidadbancaria/list">Entidades Bancarias</a></li>
+                <li role="presentation"><a class="tab-inactiva" href="#/cuentabancaria/list">Cuentas Bancarias</a></li>
             </ul>
         </div>
         <div class="panel-body">
@@ -12,99 +11,30 @@
                 <table class="table table-bordered table-striped table-hover">
                     <tbody>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Codigo Entidad</th>
-                            <th>Fecha Creacion</th> 
-                            <th>Direccion</th>
-                            <th>Cif</th> 
-                            <th>
-                                <a href="#/entidadbancaria/insert" class="btn btn-primary" role="button">Editar</a>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Codigo Entidad</th>
+                            <th class="text-center">Fecha Creacion</th> 
+                            <th class="text-center">Direccion</th>
+                            <th class="text-center">CIF</th> 
+                            <th class="text-center">Accion</th>
+                        </tr>
+                        <tr ng-repeat="entidadBancaria in entidadesBancarias">               
+                            <td class="text-center">{{entidadBancaria.nombre}}</td>  
+                            <td class="text-center">{{entidadBancaria.codigoEntidad}}</td> 
+                            <td class="text-center">{{entidadBancaria.fechaCreacion}}</td> 
+                            <td class="text-center">{{entidadBancaria.direccion}}</td> 
+                            <td class="text-center">{{entidadBancaria.cif}}</td>
+                            <td class="text-center">
+                                <a href="#/entidadbancaria/detail/{{entidadBancaria.idEntidadBancaria}}" class="btn btn-primary" role="button">Editar</a>
                                 <button ng-click="borrar(entidadBancaria.idEntidadBancaria)" class="btn btn-danger" role="button">Borrar</button>
-                            </th> 
+                            </td>
                         </tr>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Codigo Entidad</th>
-                            <th>Fecha Creacion</th> 
-                            <th>Direccion</th>
-                            <th>Cif</th> 
-                            <th>Accion</th> 
-                        </tr>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Codigo Entidad</th>
-                            <th>Fecha Creacion</th> 
-                            <th>Direccion</th>
-                            <th>Cif</th> 
-                            <th>Accion</th> 
-                        </tr>
-                    </tbody>
-                    <!--<tr ng-repeat="entidadBancaria in entidadesBancarias">               
-                        <td>{{entidadBancaria.nombre}}</td>  
-                        <td>{{entidadBancaria.codigoEntidad}}</td> 
-                        <td>{{entidadBancaria.fechaCreacion}}</td> 
-                        <td>{{entidadBancaria.direccion}}</td> 
-                        <td>{{entidadBancaria.cif}}</td>
-                        <td>
-                           
-                            <a href="#/entidadbancaria/detail/{{entidadBancaria.idEntidadBancaria}}" class="btn btn-primary pull-right" role="button">Editar</a>
-                            <button ng-click="borrar(entidadBancaria.idEntidadBancaria)" class="btn btn-danger" role="button">borrar</button>
-        
-                        </td>
-                    </tr>-->           
+                    </tbody>       
                 </table>
             </div>
         </div>
-
         <div class="panel-footer text-right">
             <a href="#/entidadbancaria/insert" class="btn btn-primary" role="button">Nueva Entidad Bancaria</a>
         </div>
     </div>
 </div>
-
-<!--<div id="tabla" class="table-responsive">
-    <table class="table table-bordered table-striped table-hover">
-        <tbody>
-            <tr>
-                <th>Nombre</th>
-                <th>Codigo Entidad</th>
-                <th>Fecha Creacion</th> 
-                <th>Direccion</th>
-                <th>Cif</th> 
-                <th>Accion</th> 
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <th>Codigo Entidad</th>
-                <th>Fecha Creacion</th> 
-                <th>Direccion</th>
-                <th>Cif</th> 
-                <th>Accion</th> 
-            </tr>
-            <tr>
-                <th>Nombre</th>
-                <th>Codigo Entidad</th>
-                <th>Fecha Creacion</th> 
-                <th>Direccion</th>
-                <th>Cif</th> 
-                <th>Accion</th> 
-            </tr>
-        </tbody>
-<!--<tr ng-repeat="entidadBancaria in entidadesBancarias">               
-    <td>{{entidadBancaria.nombre}}</td>  
-    <td>{{entidadBancaria.codigoEntidad}}</td> 
-    <td>{{entidadBancaria.fechaCreacion}}</td> 
-    <td>{{entidadBancaria.direccion}}</td> 
-    <td>{{entidadBancaria.cif}}</td>
-    <td>
-        <a href="#/entidadbancaria/detail/{{entidadBancaria.idEntidadBancaria}}" class="btn btn-primary pull-right" role="button">Editar</a>
-        <button ng-click="borrar(entidadBancaria.idEntidadBancaria)" class="btn btn-danger" role="button">borrar</button>
-
-    </td>
-</tr>-->           
-<!--</table>
-</div>     
-<a href="#/entidadbancaria/insert" class="btn btn-primary pull-right" role="button">Añadir</a>-->
-<!--</div>
-</div>
-</div>-->

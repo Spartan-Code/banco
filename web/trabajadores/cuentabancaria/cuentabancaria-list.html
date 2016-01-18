@@ -1,53 +1,40 @@
-
-<div class="container lista">
-    <div class="row">
-        <div class="col-lg-3 col-md-12">
-            <aside>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 text-center"><h2 class="text-center">Menu</h2></div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="col-lg-12 col-md-6 text-center menu-entidadesBancarias"><a href="#/entidadbancaria/list">Entidades Bancarias</a></div>
-                        <div class="col-lg-12 col-md-6 text-center menu-entidadesBancarias"><a href="#/cuentabancaria/list">Cuentas Bancarias</a></div>
-                    </div>
-
-                </div>
-            </aside>
-
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a class="tab-inactiva" href="#/entidadbancaria/list">Entidades Bancarias</a></li>
+                <li role="presentation" class="active"><a class="tab-activa" href="#/cuentabancaria/list">Cuentas Bancarias</a></li>
+            </ul>
         </div>
-        <div class="col-lg-9 col-md-12">
-            <section>
-
-                <h2 class="text-center">Gestion de Entidad Bancarias</h2>
-
-                <div id="tabla" class="table-responsive">
-                    <table class="table table-bordered table-hover">
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <tbody>
                         <tr>
-                            <th>Numero Cuenta</th>
-                            <th>Fecha Creacion</th> 
-                            <th>Saldo</th>
-                            <th>Codigo Sucursal</th> 
-                            <th>Titular</th>
-                            <th>Accion</th> 
+                            <th class="text-center">Numero Cuenta</th>
+                            <th class="text-center">Titular</th>
+                            <th class="text-center">Codigo Sucursal</th>
+                            <th class="text-center">Fecha Creacion</th> 
+                            <th class="text-center">Saldo</th>
+                            <th class="text-center">Accion</th>
                         </tr>
                         <tr ng-repeat="cuentaBancaria in cuentasBancarias">               
-                            <td>{{cuentaBancaria.numeroCuenta}}</td>
-                            <td>{{cuentaBancaria.fechaCreacion}}</td> 
-                            <td>{{cuentaBancaria.saldo}}</td> 
-                            <td>{{cuentaBancaria.sucursalBancaria.codigoSucursal}}</td> 
-                            <td>{{cuentaBancaria.usuario.nif}}</td>
-                            <td>             
-                                <a href="#/entidadbancaria/detail/{{entidadBancaria.idEntidadBancaria}}" class="btn btn-primary pull-right" role="button">Editar</a>
-                                <button ng-click="borrar(entidadBancaria.idEntidadBancaria)" class="btn btn-danger" role="button">borrar</button>
-
+                            <td class="text-center">{{cuentaBancaria.numeroCuenta}}</td>
+                            <td class="text-center">{{cuentaBancaria.usuario.nif}}</td>
+                            <td class="text-center">{{cuentaBancaria.sucursalBancaria.codigoSucursal}}</td> 
+                            <td class="text-center">{{cuentaBancaria.fechaCreacion}}</td> 
+                            <td class="text-center">{{cuentaBancaria.saldo}}</td> 
+                            <td class="text-center">
+                                <a href="#/cuentabancaria/detail/{{cuentaBancaria.idCuentaBancaria}}" class="btn btn-primary" role="button">Editar</a>
+                                <button ng-click="borrar(cuentaBancaria.idCuentaBancaria)" class="btn btn-danger" role="button">Borrar</button>
                             </td>
-                        </tr>           
-                    </table>
-                </div>     
-                <a href="#/entidadbancaria/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
-
-
-
-            </section>
+                        </tr>
+                    </tbody>       
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer text-right">
+            <a href="#/cuentabancaria/insert" class="btn btn-primary" role="button">Nueva Cuenta Bancaria</a>
         </div>
     </div>
 </div>

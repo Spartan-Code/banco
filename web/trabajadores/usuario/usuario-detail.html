@@ -1,9 +1,8 @@
 <div class="container">
     <div class="panel panel-default">
-        <!-- Default panel contents -->
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a id="tab-activa" href="#/usuario/insert">Usuarios</a></li>
+                <li role="presentation" class="active"><a class="tab-activa" href="#/usuario/insert">Usuarios</a></li>
             </ul>
         </div>
         <div class="panel-body">
@@ -14,38 +13,6 @@
                         <hr />
                     </div>
                 </div>
-                <!--<<<<<<< HEAD
-                            </aside>
-                
-                        </div>
-                        <div class="col-lg-9 col-md-12">
-                
-                            <section>
-                
-                                <form>
-                                    <fieldset>
-                
-                                        <legend>Usuario</legend>
-                                        <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
-                                        <label for="nickName">NickName:</label><br>
-                                        <input  id="nickName" name="nickName" type="text" ng-model="usuario.nickName" /><br>
-                                        <label for="nombre">Nombre:</label><br>
-                                        <input  id="nombre" name="nombre" type="text" ng-model="usuario.nombre" /><br>
-                                        <label ng-hide="control === 'detail'"  for="password">Password:</label><br>
-                                        <input ng-hide="control === 'detail'" id="password" name="password" type="text" ng-model="usuario.passwordEncrypt" /><br>                      
-                                        <label for="email">Email:</label><br>
-                                        <input id="email" name="email" type="text" ng-model="usuario.email" /><br>
-                                        <label for="rol">Rol:</label><br>
-                <!--<input id="rol" name="rol" type="text" ng-model="usuario.rol" /><br>-->
-                <!--<select id="rol" name="rol"  ng-model="usuario.rol" ng-options="rol.value as rol.nombre for rol in roles"><option value="">--Selecciona un rol--</option></select><br>
-           </fieldset>-->
-                <!--</form>
-
-                <div id="botones">
-                    <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
-                    <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
-                    <a href="#/usuario/list" class="btn btn-danger" role="button">Cancelar</a>
-=======-->
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="nombre">Nombre completo</label>
@@ -78,9 +45,15 @@
                         <input ng-hide="control === 'detail'" id="password" name="password" type="password" ng-model="usuario.passwordEncrypt" class="form-control">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="form-group col-md-10 col-md-offset-1">
+                        <div class="alert alert-danger" role="alert" ng-repeat="businessMessage in businessMessages">
+                            {{businessMessage.message}}
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
-        <uib-alert ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</uib-alert>
         <div class="panel-footer text-right">
             <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
             <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 

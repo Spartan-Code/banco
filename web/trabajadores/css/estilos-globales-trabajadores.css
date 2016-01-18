@@ -71,14 +71,14 @@ section {
     background-color: white !important;
 }
 
-#tab-activa {
+.tab-activa {
     background-image: linear-gradient(to bottom,#595959 0,#808080 100%);
     border-color: #595959 !important;
     font-weight: bold;
-    color: #F2F2F2;
+    color: #F2F2F2 !important;
 }
 
-#tab-inactiva {
+.tab-inactiva {
     /*background-image: linear-gradient(to bottom,#F2F2F2 0,#CCCCCC 100%);*/
     border: none;
     font-weight: bold;
