@@ -56,18 +56,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
 
     response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
-
-        $scope.open1 = function () {
-            $scope.popup1.opened = true;
-        };
-
-        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        $scope.format = $scope.formats[0];
-
-        $scope.popup1 = {
-            opened: false
-        };
-
+        
         var response = sucursalBancariaService.findByidEntidadBancaria(data.idEntidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -90,6 +79,17 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
             $scope.businessMessages = data;
         }
     });
+
+    $scope.open1 = function () {
+        $scope.popup1.opened = true;
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+
+    $scope.popup1 = {
+        opened: false
+    };
 
     $scope.borrar = function (idSucursalBancaria) {
         var answer = confirm("¿Estas seguro de borrar esta sucursal bancaria?");

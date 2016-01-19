@@ -54,11 +54,11 @@
                 </div>
                 <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
                     <ul class="nav navbar-nav navbar-left">
-                        <li><a  href="#/entidadbancaria/list">Gestiones Bancarias</a></li>
-                        <li><a  href="#/usuario/list">Gestion de Usuarios</a></li>
+                        <li><a ng-click="navCollapsed = true" href="#/entidadbancaria/list">Gestiones Bancarias</a></li>
+                        <li><a ng-click="navCollapsed = true" href="#/usuario/list">Gestión de Usuarios</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a  href="#/main">Help</a></li>
+                        <li><a ng-click="navCollapsed = true" href="#/main">Ayuda</a></li>
                     </ul>
                 </div>
             </div>

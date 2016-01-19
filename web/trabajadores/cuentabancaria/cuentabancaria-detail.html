@@ -15,12 +15,14 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
-                        <label for="numeroCuenta">Numero de Cuenta</label>
+                        <label for="numeroCuenta">Número de Cuenta</label>
                         <input ng-disabled="control === 'detail'" id="numeroCuenta" name="numeroCuenta" type="text" ng-model="cuentaBancaria.numeroCuenta" class="form-control">
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="direccion">Saldo</label>
-                        <input ng-disabled="control === 'detail'" id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" class="form-control" />
+                        <label for="codigoSucursal">Código Sucursal Bancaria</label>
+                        <select ng-disabled="control === 'detail'" id="codigoSucursal" name="codigoSucursal" ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales" class="form-control">
+                            <option value="">--Selecciona Codigo Sucursal--</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
@@ -31,10 +33,8 @@
                         </select>                   
                     </div>
                     <div class="form-group col-md-5">
-                        <label for="codigoSucursal">Codigo Sucursal Bancaria</label>
-                        <select ng-disabled="control === 'detail'" id="codigoSucursal" name="codigoSucursal" ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales" class="form-control">
-                            <option value="">--Selecciona Codigo Sucursal--</option>
-                        </select>
+                        <label for="direccion">Saldo</label>
+                        <input ng-disabled="control === 'detail'" id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" class="form-control" />
                     </div>
                 </div>
                 <div class="row">

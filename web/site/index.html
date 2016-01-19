@@ -39,9 +39,9 @@
                 </div>
                 <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a  href="#/login">About us</a></li>
-                        <li><a  href="#/login">Contact</a></li>
-                        <li><a  href="#/login">Help</a></li>
+                        <li><a ng-click="navCollapsed = true" href="#/login">Acerca De</a></li>
+                        <li><a ng-click="navCollapsed = true" href="#/login">Contacto</a></li>
+                        <li><a ng-click="navCollapsed = true" href="#/login">Ayuda</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="jumbotron">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div id="texto-jumbotron" class="col-md-6">
                             <h2 class="eslogan">No les deis nada...</h2>
                             <h1 class="eslogan">¡Arrebatádselo todo!</h1>
                             <p><a class="btn btn-default btn-lg" href="#/login" role="button">Conoce nuestro banco &raquo;</a></p>
@@ -70,7 +70,7 @@
                     <li><a href="#/login">Política de Privacidad</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a id="web_by" href="#/login">Website by Spartan Code</a></li>
+                    <li><a href="#/login">Website by Spartan Code</a></li>
                 </ul>
             </div>
         </footer>

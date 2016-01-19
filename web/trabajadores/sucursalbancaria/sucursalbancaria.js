@@ -1,7 +1,3 @@
-
-
-
-
 SucursalBancariaInsertController.$inject = ['$scope', '$log', '$http', 'sucursalBancariaService', '$routeParams', '$location'];
 
 function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaService, $routeParams, $location) {

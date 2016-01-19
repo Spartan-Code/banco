@@ -19,3 +19,20 @@ form button {
     margin-top: 30px;
 }
 
+@media all and (max-width: 991px) {
+    .jumbotron {
+        height: 860px;
+    }
+    
+    .panel {
+        margin-top: 75px;
+        /*margin-bottom: 75px;*/
+    }
+}
+
+@media all and (max-width: 767px) {
+    .jumbotron {
+        height: 785px;
+    }
+}
+
