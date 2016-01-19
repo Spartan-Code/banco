@@ -1,31 +1,3 @@
-
-<!--<legend>Entidad Bancaria</legend>
-<uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
-
-<label>Fecha Creacion:</label>
-<div id="calendario">
-<uib-datepicker ng-model="entidadBancaria.fechaCreacion" class="well well-sm" ></uib-datepicker>
-</div>
-</fieldset>
-</form>
-
-<!--
-<label for="fechaCreacion">Fecha Creacion:</label><input id="fechaCreacion" name="fechaCreacion" type="text" ng-model="dt" /><br>
-
-
-<label>Fecha Creacion:</label>
-<div id="calendario">
-<uib-datepicker ng-model="dt" class="well well-sm" ></uib-datepicker>
-
-
-<p class="input-group">
-              <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </p>
-
-</div>-->
 <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -65,20 +37,19 @@
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="fechaCreacion">Fecha de creación</label>
                         <p class="input-group">
-                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" show-button-bar="false" show-weeks="false" date-disabled="disabled(date, mode)" ng-required="true" alt-input-formats="altInputFormats" />
+                            <input id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="entidadBancaria.fechaCreacion" is-open="popup1.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
                         </p>
                     </div>
                 </div>
-                <!--<div class="row" ng-hide="control === 'insertar'">-->
-                <div class="row">
+                <div class="row" ng-hide="control === 'insertar'">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <ul class="nav nav-tabs">
-                                    <li role="presentation"><a class="tab-inactiva" href="#/entidadbancaria/list">Sucursales Bancarias</a></li>
+                                    <li role="presentation"><a class="tab-inactiva">Sucursales Bancarias</a></li>
                                 </ul>
                             </div>
                             <div class="panel-body">

@@ -115,6 +115,7 @@ function UsuarioInsertController($scope, $log, $http, usuarioService, $location)
     ];
 
 
+    $scope.usuario={};
 
     $scope.control = "insertar";
 

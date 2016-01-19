@@ -19,6 +19,7 @@ section {
 #contenedor-main .panel {
     margin-top: 50px;
 }
+
 #contenedor-main .panel-heading {
     padding-top: 30px;
 }
@@ -79,14 +80,17 @@ section {
 }
 
 .tab-inactiva {
-    /*background-image: linear-gradient(to bottom,#F2F2F2 0,#CCCCCC 100%);*/
-    border: none;
+    /*background-image: linear-gradient(to bottom,#FFF 0,#E6E6E6 100%);*/
+    /*border: none;*/
+    border-color: #BFBFBF !important;
     font-weight: bold;
     color: #999999;
 }
 
-.panel .nav li a:hover {
-    color: #F2F2F2;
+.tab-inactiva:hover {
+    background-image: none;
+    background-color: white;
+    color: #4D4D4D;
 }
 
 .panel-body h4 {
