@@ -14,7 +14,29 @@ function CuentaBancariaListController($scope, $log, cuentaBancariaService, $rout
             $scope.businessMessages = data;
         }
     });
-    ;
+    
+     $scope.borrar = function (idCuentaBancaria) {
+        var answer = confirm("¿Estas seguro de borrar esta cuenta bancaria?");
+        if (answer) {
+            var response = cuentaBancariaService.delete(idCuentaBancaria);
+
+            response.success(function (data, status, headers, config) {
+                alert("Borrado con Exito");
+                $route.reload();
+            }).error(function (data, status, headers, config) {
+                if (status === 500) {
+                    alert("Error interno del servidor");
+                }
+                if (status === 400) {
+                    $scope.businessMessages = data;
+                }
+
+            });
+        } else {
+
+        }
+    };
+
 
    
 
