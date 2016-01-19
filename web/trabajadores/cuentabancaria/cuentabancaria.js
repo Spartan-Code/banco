@@ -104,9 +104,9 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
 app.controller("CuentaBancariaInsertController", CuentaBancariaInsertController);
 
 
-CuentaBancariaDetailController.$inject = ['$scope', "$routeParams", '$log','cuentaBancariaService', 'usuarioService', 'sucursalBancariaService', '$location','$route'];
+CuentaBancariaDetailController.$inject = ['$scope', "$routeParams", '$log','cuentaBancariaService', 'usuarioService', 'sucursalBancariaService','movimientoBancarioService', '$location','$route'];
 
-function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancariaService, usuarioService, sucursalBancariaService, $location,$route) {
+function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancariaService, usuarioService, sucursalBancariaService,movimientoBancarioService, $location,$route) {
 
 
 
@@ -147,7 +147,24 @@ function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancari
     
    
     response.success(function (data, status, headers, config) {
-        $scope.cuentaBancaria = data;                     
+        $scope.cuentaBancaria = data;
+        
+        
+        var response = movimientoBancarioService.findByidCuentaBancaria(data.idCuentaBancaria);
+
+        response.success(function (data, status, headers, config) {
+            $scope.movimientosBancarios = data;
+        }).error(function (data, status, headers, config) {
+            if (status === 500) {
+                alert("Error interno del servidor");
+            }
+            if (status === 400) {
+                $scope.businessMessages = data;
+            }
+        });
+                                
+        
+        
     }).error(function (data, status, headers, config) {
         if (status === 500) {
             alert("Error interno del servidor");

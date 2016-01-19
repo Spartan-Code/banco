@@ -47,11 +47,36 @@
                     
                     <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
                 </div >
+                                 
+            <br><br><br><br>
+                 <div ng-hide="control === 'insertar'">
+                <div id="tabla" class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Concepto</th>
+                        <th>Tipo</th> 
+                        <th>Importe</th>
+                        <th>Saldo</th>
+                        
+                    </tr>
+                    <tr ng-repeat="movimientoBancario in movimientosBancarios">               
+                        <td>{{movimientoBancario.fecha}}</td>  
+                        <td>{{movimientoBancario.concepto}}</td> 
+                        <td>{{movimientoBancario.tipo}}</td>
+                        <td>{{movimientoBancario.importe}}</td>
+                        <td>{{movimientoBancario.saldo}}</td> 
+                        
+                                               
+                        
+                    </tr>           
+                </table>
+                    </div>
+                
+                 <a href="#/cuentabancaria/{{cuentaBancaria.idCuentaBancaria}}/movimientobancario/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
+                 </div>    
                  
-                 
-                <!--<ul>
-                    <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
-                </ul>-->
+             
             </section>            
         </div>
     </div>
