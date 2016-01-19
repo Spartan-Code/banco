@@ -31,6 +31,16 @@ function UsuarioService($http, $q) {
     };
 
 
+    this.findbyAllNif = function () {
+        var config = {
+            method: "GET",
+            url: "/banco_api/api/usuario?nif=1"
+        };
+
+        return $http(config);
+    };
+
+
     this.delete = function (idUsuario) {
         var config = {
             method: "DELETE",

@@ -27,6 +27,15 @@ function SucursalBancariaService($http, $q) {
         return $http(config);
     };
     
+    this.findAllCodigoSucursal = function () {
+        var config = {
+            method: "GET",
+            url: "/banco_api/api/sucursalbancaria?codigoSucursal=1"
+        };
+
+        return $http(config);
+    };
+    
     this.insertar = function (sucursalBancaria) {
         var config = {
             method: "POST",

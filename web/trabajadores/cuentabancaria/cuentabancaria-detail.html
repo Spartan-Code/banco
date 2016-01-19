@@ -29,13 +29,15 @@
                         <label for="saldo">Saldo:</label><br>
                         <input  id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" /><br>
 
-                        <label for="direccion">Direccion:</label><br>
-                        <input size="50" id="direccion" name="direccion" type="text" ng-model="entidadBancaria.direccion" /><br>
-                        <label for="cif">CIF:</label><br>
-                        <input size="9" id="cif" name="cif" type="text" ng-model="entidadBancaria.cif" /><br> 
+                        <label for="nif">Nif:</label><br>
+                        <select id="nif" name="nif"  ng-model="cuentaBancaria.usuario.idUsuario" ng-options="nif.id as nif.dni for nif in nifs"><option value="">--Selecciona un rol--</option></select><br>
+                        
+                        <label for="codigoSucursal">Codigo Sucursal Bancaria:</label><br>
+                        <select id="codigoSucursal" name="codigoSucursal"  ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales"><option value="">--Selecciona un rol--</option></select><br>
+                        
                         <label>Fecha Creacion:</label>
                         <div id="calendario">
-                        <uib-datepicker ng-model="cuentabancaria.fechaCreacion" class="well well-sm" ></uib-datepicker>
+                        <uib-datepicker ng-model="cuentaBancaria.fechaCreacion" class="well well-sm" ></uib-datepicker>
                         </div>
                     </fieldset>
                 </form>
@@ -43,38 +45,10 @@
                 <div id="botones" >
                     <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
                     <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
-                    <a href="#/entidadbancaria/list" class="btn btn-danger" role="button">Cancelar</a>
+                    <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
                 </div >
-                 <br><br><br><br>
-                 <div ng-hide="control === 'insertar'">
-                <div id="tabla" class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Codigo Sucursal</th>
-                        <th>Fecha Creacion</th> 
-                        <th>Direccion</th>
-                        <th>Poblacion</th> 
-                        <th>Accion</th> 
-                    </tr>
-                    <tr ng-repeat="sucursalBancaria in sucursalesBancarias">               
-                        <td>{{sucursalBancaria.nombre}}</td>  
-                        <td>{{sucursalBancaria.codigoSucursal}}</td> 
-                        <td>{{sucursalBancaria.fechaCreacion}}</td> 
-                        <td>{{sucursalBancaria.direccion}}</td> 
-                        <td>{{sucursalBancaria.poblacion}}</td>
-                        <td>
-                             <button ng-click="borrar(sucursalBancaria.idSucursalBancaria)" class="btn btn-danger" role="button">borrar</button>
-                            <a href="#/entidadbancaria/{{entidadBancaria.idEntidadBancaria}}/sucursalbancaria/detail/{{sucursalBancaria.idSucursalBancaria}}" class="btn btn-primary pull-right" role="button">Editar</a>
-                            
-                                                        
-                        </td>
-                    </tr>           
-                </table>
-                    </div>
-                
-                 <a href="#/entidadbancaria/{{entidadBancaria.idEntidadBancaria}}/sucursalbancaria/insert" class="btn btn-primary pull-right" role="button">Añadir</a>
-                 </div>
+                 
+                 
                 <!--<ul>
                     <li ng-repeat="businessMessage in businessMessages">{{businessMessage.message}}</li>
                 </ul>-->

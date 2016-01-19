@@ -12,7 +12,17 @@ function CuentaBancariaService($http, $q) {
         return $http(config);
     };
 
+     this.insertar = function (cuentaBancaria) {
+        var config = {
+            method: "POST",
+            url: "/banco_api/api/cuentabancaria",
+            data: cuentaBancaria
+        };
 
+        return $http(config);
+    };
+
+    
 }
 
 app.service("cuentaBancariaService", CuentaBancariaService);
