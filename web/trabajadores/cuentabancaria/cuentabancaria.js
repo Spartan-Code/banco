@@ -80,3 +80,64 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
 
 
 app.controller("CuentaBancariaInsertController", CuentaBancariaInsertController);
+
+
+CuentaBancariaDetailController.$inject = ['$scope', "$routeParams", '$log','cuentaBancariaService', 'usuarioService', 'sucursalBancariaService', '$location','$route'];
+
+function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancariaService, usuarioService, sucursalBancariaService, $location,$route) {
+
+
+
+
+
+    $scope.control = "detail";
+    
+    var response = sucursalBancariaService.findAllCodigoSucursal();
+
+    response.success(function (data, status, headers, config) {
+        $scope.codigoSucursales = data;
+    }).error(function (data, status, headers, config) {
+        if (status === 500) {
+            alert("Error interno del servidor");
+        }
+        if (status === 400) {
+            $scope.businessMessages = data;
+        }
+    });
+    ;
+    
+    var response = usuarioService.findbyAllNif();
+
+    response.success(function (data, status, headers, config) {
+        $scope.nifs = data;
+    }).error(function (data, status, headers, config) {
+        if (status === 500) {
+            alert("Error interno del servidor");
+        }
+        if (status === 400) {
+            $scope.businessMessages = data;
+        }
+    });
+    ;
+    
+    
+    var response = cuentaBancariaService.detail($routeParams.idCuentaBancaria);
+    
+   
+    response.success(function (data, status, headers, config) {
+        $scope.cuentaBancaria = data;                     
+    }).error(function (data, status, headers, config) {
+        if (status === 500) {
+            alert("Error interno del servidor");
+        }
+        if (status === 400) {
+            $scope.businessMessages = data;
+        }
+    });
+    ;
+    
+   
+}
+;
+
+app.controller("CuentaBancariaDetailController", CuentaBancariaDetailController);

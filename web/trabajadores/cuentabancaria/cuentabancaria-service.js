@@ -12,6 +12,15 @@ function CuentaBancariaService($http, $q) {
         return $http(config);
     };
 
+    this.detail = function (idCuentaBancaria) {
+        var config = {
+            method: "GET",
+            url: "/banco_api/api/cuentabancaria/" + idCuentaBancaria
+        };
+
+        return $http(config);
+    };
+
      this.insertar = function (cuentaBancaria) {
         var config = {
             method: "POST",

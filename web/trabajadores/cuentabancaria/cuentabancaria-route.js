@@ -11,6 +11,12 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: "CuentaBancariaInsertController",
             css: 'cuentabancaria/css/cuentabancaria-detail.css'
         });
+        
+        $routeProvider.when('/cuentabancaria/detail/:idCuentaBancaria', {
+            templateUrl: "cuentabancaria/cuentabancaria-detail.html",
+            controller: "CuentaBancariaDetailController",
+            css: 'cuentabancaria/css/cuentabancaria-detail.css'
+        });
     }]);
 
 

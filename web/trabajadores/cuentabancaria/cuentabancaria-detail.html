@@ -25,26 +25,26 @@
                         <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
                         
                         <label for="numeroCuenta">Numero Cuenta:</label><br>
-                        <input  id="numeroCuenta" name="numeroCuenta" type="text" ng-model="cuentaBancaria.numeroCuenta" /><br>
+                        <input ng-disabled="control === 'detail'"  id="numeroCuenta" name="numeroCuenta" type="text" ng-model="cuentaBancaria.numeroCuenta" /><br>
                         <label for="saldo">Saldo:</label><br>
-                        <input  id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" /><br>
+                        <input ng-disabled="control === 'detail'"   id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" /><br>
 
                         <label for="nif">Nif:</label><br>
-                        <select id="nif" name="nif"  ng-model="cuentaBancaria.usuario.idUsuario" ng-options="nif.id as nif.dni for nif in nifs"><option value="">--Selecciona un rol--</option></select><br>
+                        <select ng-disabled="control === 'detail'"  id="nif" name="nif"  ng-model="cuentaBancaria.usuario.idUsuario" ng-options="nif.id as nif.dni for nif in nifs"><option value="">--Selecciona un rol--</option></select><br>
                         
                         <label for="codigoSucursal">Codigo Sucursal Bancaria:</label><br>
-                        <select id="codigoSucursal" name="codigoSucursal"  ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales"><option value="">--Selecciona un rol--</option></select><br>
+                        <select ng-disabled="control === 'detail'"  id="codigoSucursal" name="codigoSucursal"  ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales"><option value="">--Selecciona un rol--</option></select><br>
                         
                         <label>Fecha Creacion:</label>
-                        <div id="calendario">
-                        <uib-datepicker ng-model="cuentaBancaria.fechaCreacion" class="well well-sm" ></uib-datepicker>
+                        <div   id="calendario">
+                        <uib-datepicker   ng-model="cuentaBancaria.fechaCreacion" class="well well-sm" ></uib-datepicker>
                         </div>
                     </fieldset>
                 </form>
 
                 <div id="botones" >
                     <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>
-                    <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button> 
+                    
                     <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
                 </div >
                  
