@@ -12,7 +12,35 @@ function CuentaBancariaService($http, $q) {
         return $http(config);
     };
 
+     this.delete = function (idCuentaBancaria) {
+        var config = {
+            method: "DELETE",
+            url: "/banco_api/api/cuentabancaria/" + idCuentaBancaria
+        };
 
+        return $http(config);
+    };
+
+    this.detail = function (idCuentaBancaria) {
+        var config = {
+            method: "GET",
+            url: "/banco_api/api/cuentabancaria/" + idCuentaBancaria
+        };
+
+        return $http(config);
+    };
+
+     this.insertar = function (cuentaBancaria) {
+        var config = {
+            method: "POST",
+            url: "/banco_api/api/cuentabancaria",
+            data: cuentaBancaria
+        };
+
+        return $http(config);
+    };
+
+    
 }
 
 app.service("cuentaBancariaService", CuentaBancariaService);

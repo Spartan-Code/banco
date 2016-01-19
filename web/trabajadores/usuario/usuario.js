@@ -59,7 +59,7 @@ function UsuarioDetailController($scope, $routeParams, $log, usuarioService, $lo
         }
     ];
 
-    
+
 
     $scope.control = "detail";
     var response = usuarioService.detail($routeParams.idUsuario);
@@ -115,7 +115,7 @@ function UsuarioInsertController($scope, $log, $http, usuarioService, $location)
     ];
 
 
-    $scope.usuario={};
+    $scope.usuario = {};
 
     $scope.control = "insertar";
 

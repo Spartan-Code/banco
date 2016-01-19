@@ -31,6 +31,16 @@ function UsuarioService($http, $q) {
     };
 
 
+    this.findbyAllNif = function () {
+        var config = {
+            method: "GET",
+            url: "/banco_api/api/usuario?nif=1"
+        };
+
+        return $http(config);
+    };
+
+
     this.delete = function (idUsuario) {
         var config = {
             method: "DELETE",
@@ -49,17 +59,17 @@ function UsuarioService($http, $q) {
 
         return $http(config);
     };
-    
-    this.findByNombre = function (nombreUsuario) {
-        var config = {
-            method: "GET",
-            url: "/banco_api/api/usuario/?nombre="+nombreUsuario
-        };
 
-        return $http(config);
-    };
+    /*this.findByNombre = function (nombreUsuario) {
+     var config = {
+     method: "GET",
+     url: "/banco_api/api/usuario/?nombre=" + nombreUsuario
+     };
+     
+     return $http(config);
+     };*/
 
-    
+
 
 }
 
