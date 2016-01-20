@@ -7,6 +7,7 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
 
     response.success(function (data, status, headers, config) {
         $scope.entidadesBancarias = data;
+
     }).error(function (data, status, headers, config) {
         if (status === 500) {
             alert("Error interno del servidor");

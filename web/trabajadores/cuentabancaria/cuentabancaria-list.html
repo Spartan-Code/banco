@@ -31,7 +31,7 @@
                         </tr>
                         <tr ng-repeat="cuentaBancaria in cuentasBancarias">               
                             <td>{{cuentaBancaria.numeroCuenta}}</td>
-                            <td>{{cuentaBancaria.fechaCreacion}}</td> 
+                            <td>{{cuentaBancaria.fechaCreacion | date:'dd/MM/yyyy'}}</td> 
                             <td>{{cuentaBancaria.saldo}}</td> 
                             <td>{{cuentaBancaria.sucursalBancaria.codigoSucursal}}</td> 
                             <td>{{cuentaBancaria.usuario.nif}}</td>

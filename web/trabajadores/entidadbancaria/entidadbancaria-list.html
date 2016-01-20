@@ -32,7 +32,7 @@
                     <tr ng-repeat="entidadBancaria in entidadesBancarias">               
                         <td>{{entidadBancaria.nombre}}</td>  
                         <td>{{entidadBancaria.codigoEntidad}}</td> 
-                        <td>{{entidadBancaria.fechaCreacion}}</td> 
+                        <td>{{entidadBancaria.fechaCreacion | date:'dd/MM/yyyy'}}</td> 
                         <td>{{entidadBancaria.direccion}}</td> 
                         <td>{{entidadBancaria.cif}}</td>
                         <td>

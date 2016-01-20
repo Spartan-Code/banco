@@ -22,7 +22,7 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
 
     };
 
-
+    $scope.cancelar='#/cuentabancaria/detail/'+$routeParams.idCuentaBancaria;
     $scope.control = "insertar";
 
 
