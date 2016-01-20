@@ -1,0 +1,47 @@
+<div class="container lista">
+    <div class="row">
+ <div class="col-lg-3 col-md-12">
+            <aside>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 text-center"><h2 class="text-center">Menu</h2></div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="col-lg-12 text-center menu-entidadesBancarias"><a href="#/usuario/list">Gestionar Usuarios</a></div>
+
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+        <div class="col-lg-9 col-md-12">
+
+            <section>
+
+                <form>
+                    <fieldset>
+
+                        <legend>Movimiento Bancario</legend>
+                        <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
+                        <label for="concepto">Concepto:</label><br>
+                        <input  id="concepto" name="concepto" type="text" ng-model="movimientoBancario.concepto" /><br>
+                        <label for="importe">Importe:</label><br>
+                        <input  id="importe" name="importe" type="text" ng-model="movimientoBancario.importe" /><br>
+                        <label for="tipo">Tipo:</label><br>
+                        <select id="tipo" name="tipo"  ng-model="movimientoBancario.tipo" ng-options="tipo.value as tipo.nombre for tipo in tipos"><option value="">--Selecciona un rol--</option></select><br>                         
+                        <label>Fecha:</label>
+                        <div id="calendario">
+                        <uib-datepicker ng-model="movimientoBancario.fecha" class="well well-sm" ></uib-datepicker>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <div id="botones">
+                    <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>                   
+                    <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
+                </div>
+
+                
+            </section>            
+        </div>
+    </div>
+</div>

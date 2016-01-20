@@ -1,3 +1,4 @@
+
 SucursalBancariaInsertController.$inject = ['$scope', '$log', '$http', 'sucursalBancariaService', '$routeParams', '$location'];
 
 function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaService, $routeParams, $location) {
@@ -7,7 +8,6 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
             idEntidadBancaria: $routeParams.idEntidadBancaria
 
         }
-
     };
 
     $scope.open1 = function () {
@@ -32,7 +32,9 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
+
             alert("Sucursal Bancaria con Código de Sucursal " + data.codigoSucursal + " ha sido insertada con éxito.");
+
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
