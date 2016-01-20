@@ -50,7 +50,9 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
 
             
     $scope.control = "insertar";
-    
+    $scope.cuentaBancaria={
+        saldo:0.00
+    };
     var response = sucursalBancariaService.findAllCodigoSucursal();
 
     response.success(function (data, status, headers, config) {

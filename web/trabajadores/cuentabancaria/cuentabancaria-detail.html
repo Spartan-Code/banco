@@ -27,7 +27,7 @@
                         <label for="numeroCuenta">Numero Cuenta:</label><br>
                         <input ng-disabled="control === 'detail'"  id="numeroCuenta" name="numeroCuenta" type="text" ng-model="cuentaBancaria.numeroCuenta" /><br>
                         <label for="saldo">Saldo:</label><br>
-                        <input ng-disabled="control === 'detail'"   id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" /><br>
+                        <input ng-disabled="true"   id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" /><br>
 
                         <label for="nif">Nif:</label><br>
                         <select ng-disabled="control === 'detail'"  id="nif" name="nif"  ng-model="cuentaBancaria.usuario.idUsuario" ng-options="nif.id as nif.dni for nif in nifs"><option value="">--Selecciona un rol--</option></select><br>
