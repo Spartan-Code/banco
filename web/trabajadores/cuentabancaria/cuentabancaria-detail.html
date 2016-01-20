@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group col-md-5">
                         <label for="direccion">Saldo</label>
-                        <input ng-disabled="control === 'detail'" id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" class="form-control" />
+                        <input ng-disabled="true" id="saldo" name="saldo" type="text" ng-model="cuentaBancaria.saldo" class="form-control" />
                     </div>
                 </div>
                 <div class="row">
@@ -81,6 +81,7 @@
                             <div class="panel-footer text-right">
                                 <a href="#/cuentabancaria/{{cuentaBancaria.idCuentaBancaria}}/movimientobancario/insert" class="btn btn-primary" role="button">Nuevo Movimiento Bancario</a>
                             </div>
+
                         </div>
                     </div>
                 </div>

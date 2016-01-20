@@ -48,9 +48,11 @@ app.controller("CuentaBancariaListController", CuentaBancariaListController);
 CuentaBancariaInsertController.$inject = ['$scope', '$log', '$http', 'cuentaBancariaService', 'usuarioService', 'sucursalBancariaService', '$location'];
 
 function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaService, usuarioService, sucursalBancariaService, $location) {
-
-    
+        
     $scope.control = "insertar";
+    $scope.cuentaBancaria={
+        saldo:0.00
+    };
 
     var response = sucursalBancariaService.findAllCodigoSucursal();
 
