@@ -25,7 +25,7 @@
                         <label for="concepto">Concepto:</label><br>
                         <input  id="concepto" name="concepto" type="text" ng-model="movimientoBancario.concepto" /><br>
                         <label for="importe">Importe:</label><br>
-                        <input  id="importe" name="importe" type="text" ng-model="movimientoBancario.importe" /><br>
+                        <input  id="importe" name="importe" type="number" ng-model="movimientoBancario.importe" /><br>
                         <label for="tipo">Tipo:</label><br>
                         <select id="tipo" name="tipo"  ng-model="movimientoBancario.tipo" ng-options="tipo.value as tipo.nombre for tipo in tipos"><option value="">--Selecciona un rol--</option></select><br>                         
                         <label>Fecha:</label>

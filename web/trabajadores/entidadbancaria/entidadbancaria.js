@@ -30,7 +30,8 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
                     alert("Error interno del servidor");
                 }
                 if (status === 400) {
-                    $scope.businessMessages = data;
+                    alert(data[0].message);
+
                 }
 
             });
@@ -45,17 +46,17 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
 app.controller("EntidadBancariaListController", EntidadBancariaListController);
 
 
-EntidadBancariaDetailController.$inject = ['$scope', "$routeParams", '$log','sucursalBancariaService', 'entidadBancariaService', '$location','$route'];
+EntidadBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 'sucursalBancariaService', 'entidadBancariaService', '$location', '$route'];
 
-function EntidadBancariaDetailController($scope, $routeParams, $log,sucursalBancariaService, entidadBancariaService, $location,$route) {
+function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBancariaService, entidadBancariaService, $location, $route) {
 
     $scope.control = "detail";
     var response = entidadBancariaService.detail($routeParams.idEntidadBancaria);
 
     response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
-        
-        
+
+
         var response = sucursalBancariaService.findByidEntidadBancaria(data.idEntidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -68,8 +69,8 @@ function EntidadBancariaDetailController($scope, $routeParams, $log,sucursalBanc
                 $scope.businessMessages = data;
             }
         });
-        
-        
+
+
     }).error(function (data, status, headers, config) {
         if (status === 500) {
             alert("Error interno del servidor");
@@ -79,8 +80,8 @@ function EntidadBancariaDetailController($scope, $routeParams, $log,sucursalBanc
         }
     });
     ;
-    
-    
+
+
     $scope.borrar = function (idSucursalBancaria) {
         var answer = confirm("¿Estas seguro de borrar esta sucursal bancaria?");
         if (answer) {
@@ -94,7 +95,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log,sucursalBanc
                     alert("Error interno del servidor");
                 }
                 if (status === 400) {
-                    $scope.businessMessages = data;
+                    alert(data[0].message);
                 }
 
             });
@@ -102,10 +103,10 @@ function EntidadBancariaDetailController($scope, $routeParams, $log,sucursalBanc
 
         }
     };
-    
-    
+
+
     $scope.modificar = function () {
-        
+
         var response = entidadBancariaService.modificar($scope.entidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -141,7 +142,7 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
 
     $scope.insertar = function () {
 
-        
+
         var response = entidadBancariaService.insertar($scope.entidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -164,18 +165,18 @@ app.controller("EntidadBancariaInsertController", EntidadBancariaInsertControlle
 
 
 
-EntidadBancariaMasterDetailController.$inject = ['$scope', "$routeParams", '$log', 'entidadBancariaService','sucursalBancariaService', '$location'];
+EntidadBancariaMasterDetailController.$inject = ['$scope', "$routeParams", '$log', 'entidadBancariaService', 'sucursalBancariaService', '$location'];
 
-function EntidadBancariaMasterDetailController($scope, $routeParams, $log, entidadBancariaService,sucursalBancariaService, $location) {
+function EntidadBancariaMasterDetailController($scope, $routeParams, $log, entidadBancariaService, sucursalBancariaService, $location) {
 
     $scope.control = "detail";
     var response = entidadBancariaService.detail($routeParams.idEntidadBancaria);
 
     response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
-        
-        
-        
+
+
+
         var response = sucursalBancariaService.findByidEntidadBancaria(data.idEntidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -188,10 +189,10 @@ function EntidadBancariaMasterDetailController($scope, $routeParams, $log, entid
                 $scope.businessMessages = data;
             }
         });
-        
-        
-        
-        
+
+
+
+
     }).error(function (data, status, headers, config) {
         if (status === 500) {
             alert("Error interno del servidor");

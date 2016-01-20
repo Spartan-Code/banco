@@ -26,7 +26,7 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
             alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido insertado con exito.");
-            $location.path('/entidadbancaria/list');
+            $location.path('/entidadbancaria/detail/'+$routeParams.idEntidadBancaria);
         }).error(function (data, status, headers, config) {
             if (status === 500) {
                 alert("Error interno del servidor");
@@ -68,7 +68,7 @@ function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBa
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
             alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido actualizada con exito.");
-            $location.path('/entidadbancaria/list');
+            $location.path('/entidadbancaria/detail/'+$routeParams.idEntidadBancaria);
         }).error(function (data, status, headers, config) {
             if (status === 500) {
                 alert("Error interno del servidor");

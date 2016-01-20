@@ -28,7 +28,7 @@ function CuentaBancariaListController($scope, $log, cuentaBancariaService, $rout
                     alert("Error interno del servidor");
                 }
                 if (status === 400) {
-                    $scope.businessMessages = data;
+                    alert(data[0].message);
                 }
 
             });

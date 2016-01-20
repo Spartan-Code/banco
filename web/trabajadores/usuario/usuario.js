@@ -32,7 +32,7 @@ function UsuarioListController($scope, $log, usuarioService, $route) {
                     alert("Error interno del servidor");
                 }
                 if (status === 400) {
-                    $scope.businessMessages = data;
+                    alert(data[0].message);
                 }
             });
         } else {
