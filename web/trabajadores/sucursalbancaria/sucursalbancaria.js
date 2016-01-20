@@ -32,7 +32,7 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido insertado con exito.");
+            alert("Sucursal Bancaria con Código de Sucursal " + data.codigoSucursal + " ha sido insertada con éxito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -85,7 +85,7 @@ function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBa
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido actualizada con exito.");
+            alert("Sucursal Bancaria con Código de Sucursal " + data.codigoSucursal + " ha sido actualizada con éxito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {

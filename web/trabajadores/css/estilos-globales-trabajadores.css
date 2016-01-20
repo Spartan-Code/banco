@@ -97,14 +97,14 @@ section > .container > .panel, #contenedor-main .panel {
 
 .tab-inactiva {
     /*background-image: linear-gradient(to bottom,#FFF 0,#E6E6E6 100%);*/
-    /*border: none;*/
-    border-color: #BFBFBF !important;
+    border: none;
+    /*border-color: #BFBFBF !important;*/
     font-weight: bold;
     color: #999999;
 }
 
 .tab-inactiva:hover {
-    background-image: none;
+    border-color: #BFBFBF !important;
     background-color: white;
     color: #4D4D4D;
 }
@@ -130,12 +130,12 @@ th {
     /*background-color: #E5E4D1;*/
 }
 
-td {
+td, input {
     border-color: #BFBFBF !important;
 }
 
-input {
-    border-color: #BFBFBF !important;
+.btn-primary {
+    margin-bottom: 1px;
 }
 
 /*.table-striped > tbody > tr:nth-child(2n+1) > td {
@@ -143,10 +143,6 @@ input {
 }*/
 
 @media all and (max-width: 991px) {
-    .btn-primary {
-        margin-bottom: 1px;
-    }
-    
     .panel-footer {
         text-align: center;
     }

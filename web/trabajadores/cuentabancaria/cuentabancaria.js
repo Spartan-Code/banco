@@ -16,12 +16,12 @@ function CuentaBancariaListController($scope, $log, cuentaBancariaService, $rout
     });
 
     $scope.borrar = function (idCuentaBancaria) {
-        var answer = confirm("¿Estas seguro de borrar esta cuenta bancaria?");
+        var answer = confirm("¿Estás seguro de borrar esta Cuenta Bancaria?");
         if (answer) {
             var response = cuentaBancariaService.delete(idCuentaBancaria);
 
             response.success(function (data, status, headers, config) {
-                alert("Borrado con Exito");
+                alert("Cuenta Bancaria borrada con éxito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -98,7 +98,7 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Cuenta Bancaria con numero de cuenta " + data.numeroCuenta + " ha sido insertada con exito.");
+            alert("Cuenta Bancaria con Número de Cuenta " + data.numeroCuenta + " ha sido insertada con éxito.");
             $location.path('/cuentabancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {

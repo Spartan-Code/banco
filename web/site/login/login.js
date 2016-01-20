@@ -15,7 +15,7 @@ function LoginController($scope, $log, loginService,$window) {
             var response = loginService.acceder($scope.usuario);
 
             response.success(function (data, status, headers, config) {
-                alert("Logueado");
+                alert("Login correcto");
                 if(data.rol === "Trabajador"){
                     $window.location="../trabajadores/index.html#/";
                 }else{

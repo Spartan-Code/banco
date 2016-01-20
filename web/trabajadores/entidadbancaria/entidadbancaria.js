@@ -18,12 +18,12 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
     ;
 
     $scope.borrar = function (idEntidadBancaria) {
-        var answer = confirm("¿Estas seguro de borrar esta entidad bancaria?");
+        var answer = confirm("¿Estás seguro de borrar esta Entidad Bancaria?");
         if (answer) {
             var response = entidadBancariaService.delete(idEntidadBancaria);
 
             response.success(function (data, status, headers, config) {
-                alert("Borrado con Exito");
+                alert("Entidad Bancaria borrada con éxito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -92,12 +92,12 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
     };
 
     $scope.borrar = function (idSucursalBancaria) {
-        var answer = confirm("¿Estas seguro de borrar esta sucursal bancaria?");
+        var answer = confirm("¿Estás seguro de borrar esta Sucursal Bancaria?");
         if (answer) {
             var response = sucursalBancariaService.delete(idSucursalBancaria);
 
             response.success(function (data, status, headers, config) {
-                alert("Borrado con Exito");
+                alert("Sucursal Bancaria borrada con éxito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -120,7 +120,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Entidad bancaria con CIF " + data.codigoEntidad + " ha sido actualizada con exito.");
+            alert("Entidad Bancaria con CIF " + data.codigoEntidad + " ha sido actualizada con éxito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -166,7 +166,7 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Entidad bancaria con CIF " + data.codigoEntidad + " ha sido insertada con exito.");
+            alert("Entidad Bancaria con CIF " + data.codigoEntidad + " ha sido insertada con éxito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
