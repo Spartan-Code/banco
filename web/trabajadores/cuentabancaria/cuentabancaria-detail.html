@@ -2,7 +2,10 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a class="tab-activa">Cuentas Bancarias</a></li>
+                <li role="presentation"><a class="tab-inactiva" href="#/entidadbancaria/list">Entidades Bancarias</a></li>
+                <li role="presentation"><a class="tab-inactiva" href="#/cuentabancaria/list">Cuentas Bancarias</a></li>
+                <li role="presentation" class="active" ng-hide="control === 'detail'"><a class="tab-activa">Nueva Cuenta Bancaria</a></li>
+                <li role="presentation" class="active" ng-hide="control === 'insertar'"><a class="tab-activa">Editar Cuenta Bancaria</a></li>
             </ul>
         </div>
         <div class="panel-body">
@@ -41,7 +44,7 @@
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="fechaCreacion">Fecha de creación</label>
                         <p class="input-group">
-                            <input ng-disabled="control === 'detail'" id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="cuentaBancaria.fechaCreacion" is-open="popupDatePicker.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
+                            <input readonly="readonly" ng-click="openDatePicker()" ng-disabled="control === 'detail'" id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="cuentaBancaria.fechaCreacion" is-open="popupDatePicker.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
                             <span class="input-group-btn">
                                 <button ng-disabled="control === 'detail'" type="button" class="btn btn-default" ng-click="openDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>

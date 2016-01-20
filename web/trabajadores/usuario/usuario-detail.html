@@ -2,7 +2,9 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a class="tab-activa">Usuarios</a></li>
+                <li role="presentation"><a class="tab-inactiva" href="#/usuario/list">Usuarios</a></li>
+                <li role="presentation" class="active" ng-hide="control === 'detail'"><a class="tab-activa">Nuevo Usuario</a></li>
+                <li role="presentation" class="active" ng-hide="control === 'insertar'"><a class="tab-activa">Editar Usuario</a></li>
             </ul>
         </div>
         <div class="panel-body">

@@ -10,6 +10,8 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
 
     };
 
+    $scope.pathEntidadBancariaDetail = "#/entidadbancaria/detail/" + $routeParams.idEntidadBancaria;
+
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;
     };
@@ -31,8 +33,8 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido insertado con exito.");
-            $location.path('/entidadbancaria/detail/'+$routeParams.idEntidadBancaria);
+            alert("Sucursal Bancaria con Código de Sucursal " + data.codigoSucursal + " ha sido insertada con éxito.");
+            $location.path('/entidadbancaria/detail/' + $routeParams.idEntidadBancaria);
         }).error(function (data, status, headers, config) {
             if (status === 500) {
                 alert("Error interno del servidor");
@@ -66,7 +68,9 @@ function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBa
             $scope.businessMessages = data;
         }
     });
-    
+
+    $scope.pathEntidadBancariaDetail = "#/entidadbancaria/detail/" + $routeParams.idEntidadBancaria;
+
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;
     };
@@ -77,15 +81,15 @@ function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBa
     $scope.popupDatePicker = {
         opened: false
     };
-    
+
     $scope.modificar = function () {
 
         var response = sucursalBancariaService.modificar($scope.sucursalBancaria);
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Sucursal Bancaria con Codigo Sucursal " + data.codigoSucursal + " ha sido actualizada con exito.");
-            $location.path('/entidadbancaria/detail/'+$routeParams.idEntidadBancaria);
+            alert("Sucursal Bancaria con Código de Sucursal " + data.codigoSucursal + " ha sido actualizada con éxito.");
+            $location.path('/entidadbancaria/detail/' + $routeParams.idEntidadBancaria);
         }).error(function (data, status, headers, config) {
             if (status === 500) {
                 alert("Error interno del servidor");

@@ -2,7 +2,8 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a class="tab-activa">Sucursales Bancarias</a></li>
+                <li role="presentation" class="active" ng-hide="control === 'detail'"><a class="tab-activa">Nueva Sucursal Bancaria</a></li>
+                <li role="presentation" class="active" ng-hide="control === 'insertar'"><a class="tab-activa">Editar Sucursal Bancaria</a></li>
             </ul>
         </div>
         <div class="panel-body">
@@ -51,7 +52,7 @@
                     <div class="form-group col-md-5">
                         <label for="fechaCreacion">Fecha de creación</label>
                         <p class="input-group">
-                            <input id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="sucursalBancaria.fechaCreacion" is-open="popupDatePicker.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
+                            <input readonly="readonly" ng-click="openDatePicker()" id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="sucursalBancaria.fechaCreacion" is-open="popupDatePicker.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="openDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
@@ -70,7 +71,7 @@
         <div class="panel-footer text-right">
             <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar Sucursal Bancaria</button>
             <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Guardar Cambios</button> 
-            <a href="#/entidadbancaria/list" class="btn btn-danger" role="button">Cancelar</a>
+            <a href="{{pathEntidadBancariaDetail}}" class="btn btn-danger" role="button">Cancelar</a>
         </div>
     </div>
 </div>
