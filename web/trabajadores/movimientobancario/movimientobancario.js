@@ -15,6 +15,7 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
     ];
 
     $scope.movimientoBancario = {
+        fecha:new Date(),
         cuentaBancaria: {
             idCuentaBancaria: $routeParams.idCuentaBancaria
 

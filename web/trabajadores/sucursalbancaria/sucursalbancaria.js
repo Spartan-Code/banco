@@ -7,6 +7,7 @@ SucursalBancariaInsertController.$inject = ['$scope', '$log', '$http', 'sucursal
 function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaService, $routeParams, $location) {
 
     $scope.sucursalBancaria = {
+        fechaCreacion:new Date(),
         entidadBancaria: {
             idEntidadBancaria: $routeParams.idEntidadBancaria
 
