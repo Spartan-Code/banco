@@ -37,9 +37,9 @@
                     <div class="form-group col-md-6 col-md-offset-3">
                         <label for="fechaCreacion">Fecha</label>
                         <p class="input-group">
-                            <input id="fecha" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="movimientoBancario.fecha" is-open="popup1.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
+                            <input id="fecha" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="movimientoBancario.fecha" is-open="popupDatePicker.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                <button type="button" class="btn btn-default" ng-click="openDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
                         </p>
                     </div>

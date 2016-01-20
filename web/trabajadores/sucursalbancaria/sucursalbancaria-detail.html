@@ -51,9 +51,9 @@
                     <div class="form-group col-md-5">
                         <label for="fechaCreacion">Fecha de creación</label>
                         <p class="input-group">
-                            <input id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="sucursalBancaria.fechaCreacion" is-open="popup1.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
+                            <input id="fechaCreacion" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="sucursalBancaria.fechaCreacion" is-open="popupDatePicker.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                <button type="button" class="btn btn-default" ng-click="openDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
                         </p>
                     </div>

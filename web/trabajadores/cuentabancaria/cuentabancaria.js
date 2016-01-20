@@ -79,14 +79,14 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
         }
     });
 
-    $scope.open1 = function () {
-        $scope.popup1.opened = true;
+    $scope.openDatePicker = function () {
+        $scope.popupDatePicker.opened = true;
     };
 
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
 
-    $scope.popup1 = {
+    $scope.popupDatePicker = {
         opened: false
     };
 
@@ -185,14 +185,14 @@ function CuentaBancariaDetailController($scope, $routeParams, $log, cuentaBancar
         }
     });
 
-    $scope.open1 = function () {
-        $scope.popup1.opened = true;
+    $scope.openDatePicker = function () {
+        $scope.popupDatePicker.opened = true;
     };
 
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
 
-    $scope.popup1 = {
+    $scope.popupDatePicker = {
         opened: false
     };
 
