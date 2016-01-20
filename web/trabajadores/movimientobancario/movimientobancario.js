@@ -22,6 +22,16 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
 
     };
 
+    $scope.open1 = function () {
+        $scope.popup1.opened = true;
+    };
+
+    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+
+    $scope.popup1 = {
+        opened: false
+    };
 
     $scope.control = "insertar";
 
@@ -33,7 +43,7 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Movimiento Bancario insertado con exito.");
+            alert("Movimiento Bancario insertado con éxito.");
             $location.path('/cuentabancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {

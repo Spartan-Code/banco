@@ -1,47 +1,61 @@
-<div class="container lista">
-    <div class="row">
- <div class="col-lg-3 col-md-12">
-            <aside>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 text-center"><h2 class="text-center">Menu</h2></div>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="col-lg-12 text-center menu-entidadesBancarias"><a href="#/usuario/list">Gestionar Usuarios</a></div>
-
-                    </div>
-
-                </div>
-            </aside>
-
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a class="tab-activa">Movimientos Bancarios</a></li>
+            </ul>
         </div>
-        <div class="col-lg-9 col-md-12">
-
-            <section>
-
-                <form>
-                    <fieldset>
-
-                        <legend>Movimiento Bancario</legend>
-                        <uib-alert ng-repeat="businessMessage in businessMessages"  >{{businessMessage.message}}</uib-alert>
-                        <label for="concepto">Concepto:</label><br>
-                        <input  id="concepto" name="concepto" type="text" ng-model="movimientoBancario.concepto" /><br>
-                        <label for="importe">Importe:</label><br>
-                        <input  id="importe" name="importe" type="text" ng-model="movimientoBancario.importe" /><br>
-                        <label for="tipo">Tipo:</label><br>
-                        <select id="tipo" name="tipo"  ng-model="movimientoBancario.tipo" ng-options="tipo.value as tipo.nombre for tipo in tipos"><option value="">--Selecciona un rol--</option></select><br>                         
-                        <label>Fecha:</label>
-                        <div id="calendario">
-                        <uib-datepicker ng-model="movimientoBancario.fecha" class="well well-sm" ></uib-datepicker>
-                        </div>
-                    </fieldset>
-                </form>
-
-                <div id="botones">
-                    <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar</button>                   
-                    <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
+        <div class="panel-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h4>Datos de Movimiento Bancario</h4>
+                        <hr />
+                    </div>
                 </div>
-
-                
-            </section>            
+                <div class="row">
+                    <div class="form-group col-md-6 col-md-offset-3">
+                        <label for="concepto">Concepto</label>
+                        <input id="concepto" name="concepto" type="text" ng-model="movimientoBancario.concepto" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-md-offset-3">
+                        <label for="importe">Importe</label>
+                        <input id="importe" name="importe" type="text" ng-model="movimientoBancario.importe" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-md-offset-3">
+                        <label for="tipo">Tipo</label>
+                        <select id="tipo" name="tipo" ng-model="movimientoBancario.tipo" ng-options="tipo.value as tipo.nombre for tipo in tipos" class="form-control">
+                            <option value="">--Selecciona tipo de movimiento--</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-md-offset-3">
+                        <label for="fechaCreacion">Fecha</label>
+                        <p class="input-group">
+                            <input id="fecha" type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="movimientoBancario.fecha" is-open="popup1.opened" show-button-bar="false" show-weeks="false" ng-required="true" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-md-offset-3">
+                        <div class="alert alert-danger" role="alert" ng-repeat="businessMessage in businessMessages">
+                            {{businessMessage.message}}
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer text-right">
+            <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar Movimiento Bancario</button>
+            <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
         </div>
     </div>
 </div>
