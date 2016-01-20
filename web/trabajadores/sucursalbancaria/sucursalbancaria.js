@@ -3,14 +3,13 @@ SucursalBancariaInsertController.$inject = ['$scope', '$log', '$http', 'sucursal
 function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaService, $routeParams, $location) {
 
     $scope.sucursalBancaria = {
+        fechaCreacion: new Date(),
         entidadBancaria: {
             idEntidadBancaria: $routeParams.idEntidadBancaria
 
         }
 
     };
-
-    $scope.pathEntidadBancariaDetail = "#/entidadbancaria/detail/" + $routeParams.idEntidadBancaria;
 
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;
@@ -22,6 +21,8 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
     $scope.popupDatePicker = {
         opened: false
     };
+
+    $scope.cancelar = '#/entidadbancaria/detail/' + $routeParams.idEntidadBancaria;
 
     $scope.control = "insertar";
 
@@ -55,6 +56,8 @@ SucursalBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 's
 function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBancariaService, $location) {
 
     $scope.control = "detail";
+    $scope.cancelar = '#/entidadbancaria/detail/' + $routeParams.idEntidadBancaria;
+
     var response = sucursalBancariaService.detail($routeParams.idSucursalBancaria);
 
     response.success(function (data, status, headers, config) {
@@ -68,8 +71,6 @@ function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBa
             $scope.businessMessages = data;
         }
     });
-
-    $scope.pathEntidadBancariaDetail = "#/entidadbancaria/detail/" + $routeParams.idEntidadBancaria;
 
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;

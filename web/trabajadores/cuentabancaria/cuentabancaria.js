@@ -51,6 +51,7 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
             
     $scope.control = "insertar";
     $scope.cuentaBancaria={
+        fechaCreacion:new Date(),
         saldo:0.00
     };
     var response = sucursalBancariaService.findAllCodigoSucursal();

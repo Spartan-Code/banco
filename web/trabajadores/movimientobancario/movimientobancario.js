@@ -15,14 +15,13 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
     ];
 
     $scope.movimientoBancario = {
+        fecha:new Date(),
         cuentaBancaria: {
             idCuentaBancaria: $routeParams.idCuentaBancaria
 
         }
 
     };
-    
-    $scope.pathCuentaBancariaDetail = "#/cuentabancaria/detail/" + $routeParams.idCuentaBancaria;
 
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;
@@ -34,7 +33,9 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
     $scope.popupDatePicker = {
         opened: false
     };
-    
+
+    $scope.cancelar='#/cuentabancaria/detail/'+$routeParams.idCuentaBancaria;
+
     $scope.control = "insertar";
 
 
