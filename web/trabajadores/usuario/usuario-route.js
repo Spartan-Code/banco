@@ -3,6 +3,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/usuario/list', {
             templateUrl: "usuario/usuario-list.html",
             controller: "UsuarioListController"
+
         });
 
         $routeProvider.when('/usuario/detail/:idUsuario', {
