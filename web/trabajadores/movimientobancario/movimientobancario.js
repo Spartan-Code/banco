@@ -32,7 +32,7 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
     $scope.popupDatePicker = {
         opened: false
     };
-
+    
     $scope.control = "insertar";
 
 
@@ -43,8 +43,8 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Movimiento Bancario insertado con éxito.");
-            $location.path('/cuentabancaria/list');
+            alert("Movimiento Bancario insertado con exito.");
+            $location.path('/cuentabancaria/detail/'+$routeParams.idCuentaBancaria);
         }).error(function (data, status, headers, config) {
             if (status === 500) {
                 alert("Error interno del servidor");
@@ -58,5 +58,4 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
 
 
 app.controller("MovimientoBancarioInsertController", MovimientoBancarioInsertController);
-
 

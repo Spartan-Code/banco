@@ -30,7 +30,8 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
                     alert("Error interno del servidor");
                 }
                 if (status === 400) {
-                    $scope.businessMessages = data;
+                    alert(data[0].message);
+
                 }
 
             });
@@ -56,7 +57,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
 
     response.success(function (data, status, headers, config) {
         $scope.entidadBancaria = data;
-        
+
         var response = sucursalBancariaService.findByidEntidadBancaria(data.idEntidadBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -104,7 +105,7 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
                     alert("Error interno del servidor");
                 }
                 if (status === 400) {
-                    $scope.businessMessages = data;
+                    alert(data[0].message);
                 }
 
             });
