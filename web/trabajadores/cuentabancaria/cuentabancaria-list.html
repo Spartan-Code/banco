@@ -23,6 +23,7 @@
                     <table class="table table-bordered table-hover">
                         <tr>
                             <th>Numero Cuenta</th>
+                            <th>Digito Control</th>
                             <th>Fecha Creacion</th> 
                             <th>Saldo</th>
                             <th>Codigo Sucursal</th> 
@@ -31,6 +32,7 @@
                         </tr>
                         <tr ng-repeat="cuentaBancaria in cuentasBancarias">               
                             <td>{{cuentaBancaria.numeroCuenta}}</td>
+                            <td>{{cuentaBancaria.digitoControl}}</td>
                             <td>{{cuentaBancaria.fechaCreacion}}</td> 
                             <td>{{cuentaBancaria.saldo}}</td> 
                             <td>{{cuentaBancaria.sucursalBancaria.codigoSucursal}}</td> 
