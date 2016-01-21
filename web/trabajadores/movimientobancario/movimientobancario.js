@@ -15,6 +15,7 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
     ];
 
     $scope.movimientoBancario = {
+        fecha:new Date(),
         cuentaBancaria: {
             idCuentaBancaria: $routeParams.idCuentaBancaria
 
@@ -22,7 +23,7 @@ function MovimientoBancarioInsertController($scope, $log, $http, movimientoBanca
 
     };
 
-
+    $scope.cancelar='#/cuentabancaria/detail/'+$routeParams.idCuentaBancaria;
     $scope.control = "insertar";
 
 

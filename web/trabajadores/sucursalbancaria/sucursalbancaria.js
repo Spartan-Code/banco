@@ -7,6 +7,7 @@ SucursalBancariaInsertController.$inject = ['$scope', '$log', '$http', 'sucursal
 function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaService, $routeParams, $location) {
 
     $scope.sucursalBancaria = {
+        fechaCreacion:new Date(),
         entidadBancaria: {
             idEntidadBancaria: $routeParams.idEntidadBancaria
 
@@ -14,7 +15,7 @@ function SucursalBancariaInsertController($scope, $log, $http, sucursalBancariaS
 
     };
 
-
+    $scope.cancelar='#/entidadbancaria/detail/'+$routeParams.idEntidadBancaria;
     $scope.control = "insertar";
 
 
@@ -47,6 +48,7 @@ SucursalBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 's
 function SucursalBancariaDetailController($scope, $routeParams, $log, sucursalBancariaService, $location) {
 
     $scope.control = "detail";
+    $scope.cancelar='#/entidadbancaria/detail/'+$routeParams.idEntidadBancaria;
     var response = sucursalBancariaService.detail($routeParams.idSucursalBancaria);
 
     response.success(function (data, status, headers, config) {
