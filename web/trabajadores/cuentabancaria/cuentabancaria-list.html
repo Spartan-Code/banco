@@ -12,6 +12,7 @@
                     <tbody>
                         <tr>
                             <th class="text-center">Número Cuenta</th>
+                            <th class="text-center">Digito Control</th>
                             <th class="text-center">NIF Titular</th>
                             <th class="text-center">Código Sucursal</th>
                             <th class="text-center">Fecha Creación</th> 
@@ -20,6 +21,7 @@
                         </tr>
                         <tr ng-repeat="cuentaBancaria in cuentasBancarias">               
                             <td class="text-center">{{cuentaBancaria.numeroCuenta}}</td>
+                            <td class="text-center">{{cuentaBancaria.digitoControl}}</td>
                             <td class="text-center">{{cuentaBancaria.usuario.nif}}</td>
                             <td class="text-center">{{cuentaBancaria.sucursalBancaria.codigoSucursal}}</td> 
                             <td class="text-center">{{cuentaBancaria.fechaCreacion| date:'dd/MM/yyyy'}}</td> 
