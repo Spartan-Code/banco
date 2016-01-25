@@ -73,7 +73,7 @@
                                             <tr ng-repeat="sucursalBancaria in sucursalesBancarias">               
                                                 <td class="text-center">{{sucursalBancaria.nombre}}</td>  
                                                 <td class="text-center">{{sucursalBancaria.codigoSucursal}}</td> 
-                                                <td class="text-center">{{sucursalBancaria.fechaCreacion}}</td> 
+                                                <td class="text-center">{{sucursalBancaria.fechaCreacion | date:'dd/MM/yyyy'}}</td> 
                                                 <td class="text-center">{{sucursalBancaria.direccion}}</td> 
                                                 <td class="text-center">{{sucursalBancaria.poblacion}}</td>
                                                 <td class="text-center">{{sucursalBancaria.codigoPostal}}</td> 

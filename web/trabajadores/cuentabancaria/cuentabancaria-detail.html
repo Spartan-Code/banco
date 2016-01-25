@@ -71,7 +71,7 @@
                                                 <th class="text-center">Saldo</th> 
                                             </tr>
                                             <tr ng-repeat="movimientoBancario in movimientosBancarios">               
-                                                <td class="text-center">{{movimientoBancario.fecha}}</td>  
+                                                <td class="text-center">{{movimientoBancario.fecha | date:'dd/MM/yyyy'}}</td>  
                                                 <td class="text-center">{{movimientoBancario.concepto}}</td> 
                                                 <td class="text-center">{{movimientoBancario.tipo}}</td> 
                                                 <td class="text-center">{{movimientoBancario.importe}}</td> 

@@ -24,7 +24,6 @@ function EntidadBancariaListController($scope, $log, entidadBancariaService, $ro
             var response = entidadBancariaService.delete(idEntidadBancaria);
 
             response.success(function (data, status, headers, config) {
-                alert("Entidad Bancaria borrada con éxito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -99,7 +98,6 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
             var response = sucursalBancariaService.delete(idSucursalBancaria);
 
             response.success(function (data, status, headers, config) {
-                alert("Sucursal Bancaria borrada con éxito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -122,7 +120,6 @@ function EntidadBancariaDetailController($scope, $routeParams, $log, sucursalBan
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Entidad Bancaria con CIF " + data.codigoEntidad + " ha sido actualizada con éxito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -168,7 +165,6 @@ function EntidadBancariaInsertController($scope, $log, $http, entidadBancariaSer
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Entidad Bancaria con CIF " + data.codigoEntidad + " ha sido insertada con éxito.");
             $location.path('/entidadbancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -210,8 +206,6 @@ function EntidadBancariaMasterDetailController($scope, $routeParams, $log, entid
                 $scope.businessMessages = data;
             }
         });
-
-
 
 
     }).error(function (data, status, headers, config) {

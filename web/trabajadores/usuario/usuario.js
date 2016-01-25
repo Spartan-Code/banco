@@ -25,7 +25,6 @@ function UsuarioListController($scope, $log, usuarioService, $route) {
             var response = usuarioService.delete(idUsuario);
 
             response.success(function (data, status, headers, config) {
-                alert("Usuario borrado con éxito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -81,7 +80,6 @@ function UsuarioDetailController($scope, $routeParams, $log, usuarioService, $lo
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Usuario con Nickname " + data.nickName + " ha sido actualizado con éxito.");
             $location.path('/usuario/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -127,7 +125,6 @@ function UsuarioInsertController($scope, $log, $http, usuarioService, $location)
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Usuario con Nickname " + data.nickName + " ha sido insertado con éxito.");
             $location.path('/usuario/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {

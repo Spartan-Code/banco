@@ -14,14 +14,13 @@ function CuentaBancariaListController($scope, $log, cuentaBancariaService, $rout
             $scope.businessMessages = data;
         }
     });
-    
-     $scope.borrar = function (idCuentaBancaria) {
+
+    $scope.borrar = function (idCuentaBancaria) {
         var answer = confirm("¿Estas seguro de borrar esta cuenta bancaria?");
         if (answer) {
             var response = cuentaBancariaService.delete(idCuentaBancaria);
 
             response.success(function (data, status, headers, config) {
-                alert("Borrado con Exito");
                 $route.reload();
             }).error(function (data, status, headers, config) {
                 if (status === 500) {
@@ -38,9 +37,10 @@ function CuentaBancariaListController($scope, $log, cuentaBancariaService, $rout
     };
 
 
-   
 
-};
+
+}
+;
 app.controller("CuentaBancariaListController", CuentaBancariaListController);
 
 
@@ -48,11 +48,11 @@ CuentaBancariaInsertController.$inject = ['$scope', '$log', '$http', 'cuentaBanc
 
 function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaService, usuarioService, sucursalBancariaService, $location) {
 
-            
+
     $scope.control = "insertar";
-    $scope.cuentaBancaria={
-        fechaCreacion:new Date(),
-        saldo:0.00
+    $scope.cuentaBancaria = {
+        fechaCreacion: new Date(),
+        saldo: 0.00
     };
     var response = sucursalBancariaService.findAllCodigoSucursal();
 
@@ -67,7 +67,7 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
         }
     });
     ;
-    
+
     var response = usuarioService.findbyAllNif();
 
     response.success(function (data, status, headers, config) {
@@ -81,7 +81,7 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
         }
     });
     ;
-    
+
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;
     };
@@ -100,7 +100,6 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
 
         response.success(function (data, status, headers, config) {
             $scope.businessMessages = [];
-            alert("Cuenta Bancaria con numero de cuenta " + data.numeroCuenta + " ha sido insertada con exito.");
             $location.path('/cuentabancaria/list');
         }).error(function (data, status, headers, config) {
             if (status === 500) {
@@ -117,16 +116,16 @@ function CuentaBancariaInsertController($scope, $log, $http, cuentaBancariaServi
 app.controller("CuentaBancariaInsertController", CuentaBancariaInsertController);
 
 
-CuentaBancariaDetailController.$inject = ['$scope', "$routeParams", '$log','cuentaBancariaService', 'usuarioService', 'sucursalBancariaService','movimientoBancarioService', '$location','$route'];
+CuentaBancariaDetailController.$inject = ['$scope', "$routeParams", '$log', 'cuentaBancariaService', 'usuarioService', 'sucursalBancariaService', 'movimientoBancarioService', '$location', '$route'];
 
-function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancariaService, usuarioService, sucursalBancariaService,movimientoBancarioService, $location,$route) {
+function CuentaBancariaDetailController($scope, $routeParams, $log, cuentaBancariaService, usuarioService, sucursalBancariaService, movimientoBancarioService, $location, $route) {
 
 
 
 
 
     $scope.control = "detail";
-    
+
     var response = sucursalBancariaService.findAllCodigoSucursal();
 
     response.success(function (data, status, headers, config) {
@@ -140,7 +139,7 @@ function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancari
         }
     });
     ;
-    
+
     var response = usuarioService.findbyAllNif();
 
     response.success(function (data, status, headers, config) {
@@ -154,15 +153,15 @@ function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancari
         }
     });
     ;
-    
-    
+
+
     var response = cuentaBancariaService.detail($routeParams.idCuentaBancaria);
-    
-   
+
+
     response.success(function (data, status, headers, config) {
         $scope.cuentaBancaria = data;
-        
-        
+
+
         var response = movimientoBancarioService.findByidCuentaBancaria(data.idCuentaBancaria);
 
         response.success(function (data, status, headers, config) {
@@ -175,9 +174,9 @@ function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancari
                 $scope.businessMessages = data;
             }
         });
-                                
-        
-        
+
+
+
     }).error(function (data, status, headers, config) {
         if (status === 500) {
             alert("Error interno del servidor");
@@ -187,7 +186,7 @@ function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancari
         }
     });
     ;
-    
+
     $scope.openDatePicker = function () {
         $scope.popupDatePicker.opened = true;
     };
@@ -198,7 +197,7 @@ function CuentaBancariaDetailController($scope, $routeParams, $log,cuentaBancari
     $scope.popupDatePicker = {
         opened: false
     };
-   
+
 }
 ;
 
