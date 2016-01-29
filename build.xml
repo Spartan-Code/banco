@@ -7,10 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="banco" default="default" basedir="./bin/ant/bin/ant">
+<project name="banco" default="default" basedir=".">
     <description>Builds, tests, and runs the project banco.</description>
-	<property name="libs.CopyLibs.classpath" value="ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
-	<property name="j2ee.server.home" value="ant" />
     <import file="nbproject/build-impl.xml"/>
     <!--
 
@@ -70,5 +68,6 @@
     nbproject/build-impl.xml file. 
 
     -->
-	
+	<property name="libs.CopyLibs.classpath" value="ant/lib/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+	<property name="j2ee.server.home" value="ant" />
 </project>
