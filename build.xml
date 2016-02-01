@@ -76,7 +76,7 @@
 	<target name="-post-dist">
 		<gitcloneapplication    
 		userName="spartancodewebdevelopers@gmail.com"
-		password="spartancode1234"
+		password="${password}"
 		domainName="spartancode"
 		applicationName="banco" 
 		privateKeyFile="./.ssh/id_rsa"
