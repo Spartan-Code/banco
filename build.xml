@@ -79,8 +79,8 @@
 		password="spartancode1234"
 		domainName="spartancode"
 		applicationName="banco" 
-		privateKeyFile="$WORKSPACE/banco/ssh/id_rsa"
-		path="$WORKSPACE/banco/banco_openshift"
+		privateKeyFile="./.ssh/id_rsa"
+		path="./banco_openshift"
 		/>
     </target>
 </project>
