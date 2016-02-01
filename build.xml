@@ -80,7 +80,7 @@
 		domainName="spartancode"
 		applicationName="banco" 
 		privateKeyFile="./ssh/id_rsa"
-		path="."
+		path="./banco"
 		/>
     </target>
 </project>
