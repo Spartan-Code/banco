@@ -79,8 +79,8 @@
 		password="spartancode1234"
 		domainName="spartancode"
 		applicationName="banco" 
-		privateKeyFile="ssh/id_rsa"
-		path="./banco"
+		privateKeyFile="../ssh/id_rsa"
+		path="../banco"
 		/>
     </target>
 </project>
