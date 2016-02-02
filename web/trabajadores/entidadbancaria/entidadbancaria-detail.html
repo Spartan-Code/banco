@@ -71,23 +71,17 @@
                                             <tr>
                                                 <th class="text-center">Nombre</th>
                                                 <th class="text-center">Codigo Sucursal</th>
-                                                <th class="text-center">Fecha Creacion</th> 
-                                                <th class="text-center">Direccion</th>
                                                 <th class="text-center">Poblacion</th> 
                                                 <th class="text-center">Codigo Postal</th>
                                                 <th class="text-center">Telefono</th> 
-                                                <th class="text-center">Email</th>
                                                 <th class="text-center">Accion</th>
                                             </tr>
                                             <tr ng-repeat="sucursalBancaria in sucursalesBancarias">               
                                                 <td class="text-center">{{sucursalBancaria.nombre}}</td>  
                                                 <td class="text-center">{{sucursalBancaria.codigoSucursal}}</td> 
-                                                <td class="text-center">{{sucursalBancaria.fechaCreacion | date:'dd/MM/yyyy'}}</td> 
-                                                <td class="text-center">{{sucursalBancaria.direccion}}</td> 
                                                 <td class="text-center">{{sucursalBancaria.poblacion}}</td>
                                                 <td class="text-center">{{sucursalBancaria.codigoPostal}}</td> 
                                                 <td class="text-center">{{sucursalBancaria.telefono}}</td> 
-                                                <td class="text-center">{{sucursalBancaria.email}}</td>
                                                 <td class="text-center">
                                                     <a href="#/entidadbancaria/{{entidadBancaria.idEntidadBancaria}}/sucursalbancaria/detail/{{sucursalBancaria.idSucursalBancaria}}" class="btn btn-primary" role="button">Editar</a>
                                                     <button ng-click="borrar(sucursalBancaria.idSucursalBancaria)" class="btn btn-danger" role="button">Borrar</button>
