@@ -9,7 +9,7 @@
             </ul>
         </div>
         <div class="panel-body">
-            <form>
+            <form name="formularioCuentaBancaria" novalidate>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <h4>Datos de Cuenta Bancaria</h4>
@@ -19,21 +19,25 @@
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="numeroCuenta">Número de Cuenta</label>
-                        <input ng-disabled="control === 'detail'" id="numeroCuenta" name="numeroCuenta" type="text" ng-model="cuentaBancaria.numeroCuenta" class="form-control">
+                        <input ng-disabled="control === 'detail'" id="numeroCuenta" name="numeroCuenta" type="text" ng-model="cuentaBancaria.numeroCuenta" class="form-control" ng-pattern="/^[0-9]{10}$/" required>
+                        <span ng-show="formularioCuentaBancaria.numeroCuenta.$error.required && formularioCuentaBancaria.numeroCuenta.$dirty">El campo es requerido</span>
+                        <span ng-show="formularioCuentaBancaria.numeroCuenta.$error.pattern">El numero de cuenta debe tener diez cifras del 0 al 9</span>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="codigoSucursal">Código Sucursal Bancaria</label>
-                        <select ng-disabled="control === 'detail'" id="codigoSucursal" name="codigoSucursal" ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales" class="form-control">
+                        <select required ng-disabled="control === 'detail'" id="codigoSucursal" name="codigoSucursal" ng-model="cuentaBancaria.sucursalBancaria.idSucursalBancaria" ng-options="codigoSucursal.id as codigoSucursal.codigo for codigoSucursal in codigoSucursales" class="form-control">
                             <option value="">--Selecciona Codigo Sucursal--</option>
                         </select>
+                         <span ng-show="formularioCuentaBancaria.codigoSucursal.$error.required && formularioCuentaBancaria.codigoSucursal.$dirty">El campo es requerido</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="nif">NIF Titular</label>
-                        <select ng-disabled="control === 'detail'" id="nif" name="nif" ng-model="cuentaBancaria.usuario.idUsuario" ng-options="nif.id as nif.dni for nif in nifs" class="form-control">
+                        <select required ng-disabled="control === 'detail'" id="nif" name="nif" ng-model="cuentaBancaria.usuario.idUsuario" ng-options="nif.id as nif.dni for nif in nifs" class="form-control">                            
                             <option value="">--Selecciona NIF--</option>
-                        </select>                   
+                        </select>
+                        <span ng-show="formularioCuentaBancaria.nif.$error.required && formularioCuentaBancaria.nif.$dirty">El campo es requerido</span>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="direccion">Saldo</label>
@@ -98,7 +102,7 @@
             </form>
         </div>
         <div class="panel-footer text-right">
-            <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar Cuenta Bancaria</button>
+            <button ng-click="insertar()" class="btn btn-primary" ng-disabled="formularioCuentaBancaria.$invalid" role="button" ng-hide="control === 'detail'">Insertar Cuenta Bancaria</button>
             <!--<button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Modificar</button>--> 
             <a href="#/cuentabancaria/list" class="btn btn-danger" role="button">Cancelar</a>
         </div>
