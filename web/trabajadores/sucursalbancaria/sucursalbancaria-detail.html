@@ -7,7 +7,7 @@
             </ul>
         </div>
         <div class="panel-body">
-            <form>
+            <form name="formularioSucursalBancaria" novalidate>
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <h4>Datos de Sucursal Bancaria</h4>
@@ -17,37 +17,52 @@
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="codigoSucursal">Codigo Sucursal</label>
-                        <input id="codigoSucursal" name="codigoSucursal" type="text" ng-model="sucursalBancaria.codigoSucursal" class="form-control">
+                        <input id="codigoSucursal" name="codigoSucursal" type="text" ng-model="sucursalBancaria.codigoSucursal" class="form-control" ng-pattern="/^[0-9]{4}$/" required>
+                        <span ng-show="formularioSucursalBancaria.codigoSucursal.$error.required && formularioSucursalBancaria.codigoSucursal.$dirty">El campo es requerido</span>
+                        <span ng-show="formularioSucursalBancaria.codigoSucursal.$error.pattern">El codigo entidad debe contener cuatro cifras del 0 al 9</span>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="nombre">Nombre</label>
-                        <input id="nombre" name="nombre" type="text" ng-model="sucursalBancaria.nombre" class="form-control">
+                        <input id="nombre" name="nombre" type="text" ng-model="sucursalBancaria.nombre" class="form-control" ng-minlength="5" ng-maxlength="50" required>
+                        <span ng-show="formularioSucursalBancaria.nombre.$error.minlength">El tamaño m&iacute;nimo debe ser 5</span>
+                        <span ng-show="formularioSucursalBancaria.nombre.$error.maxlength">El tamaño m&aacute;ximo debe ser 50</span>
+                        <span ng-show="formularioSucursalBancaria.nombre.$error.required && formularioSucursalBancaria.nombre.$dirty">El campo es requerido</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="direccion">Direccion</label>
-                        <input id="direccion" name="direccion" type="text" ng-model="sucursalBancaria.direccion" class="form-control">
+                        <input id="direccion" name="direccion" type="text" ng-model="sucursalBancaria.direccion" class="form-control" ng-minlength="5" ng-maxlength="100" required>
+                        <span ng-show="formularioSucursalBancaria.direccion.$error.minlength">El tamaño m&iacute;nimo debe ser 5</span>
+                        <span ng-show="formularioSucursalBancaria.direccion.$error.maxlength">El tamaño m&aacute;ximo debe ser 100</span>
+                        <span ng-show="formularioSucursalBancaria.direccion.$error.required && formularioSucursalBancaria.direccion.$dirty">El campo es requerido</span>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="poblacion">Poblacion</label>
-                        <input id="poblacion" name="poblacion" type="text" ng-model="sucursalBancaria.poblacion" class="form-control">
+                        <input id="poblacion" name="poblacion" type="text" ng-model="sucursalBancaria.poblacion" class="form-control" ng-minlength="5" ng-maxlength="50" required>
+                        <span ng-show="formularioSucursalBancaria.poblacion.$error.minlength">El tamaño m&iacute;nimo debe ser 5</span>
+                        <span ng-show="formularioSucursalBancaria.poblacion.$error.maxlength">El tamaño m&aacute;ximo debe ser 50</span>
+                        <span ng-show="formularioSucursalBancaria.poblacion.$error.required && formularioSucursalBancaria.poblacion.$dirty">El campo es requerido</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="codigoPostal">Codigo Postal</label>
-                        <input id="codigoPostal" name="codigoPostal" type="text" ng-model="sucursalBancaria.codigoPostal" class="form-control">
+                        <input id="codigoPostal" name="codigoPostal" type="text" ng-model="sucursalBancaria.codigoPostal" class="form-control" ng-pattern="/^[0-9]{5}$/" required>
+                        <span ng-show="formularioSucursalBancaria.codigoPostal.$error.required && formularioSucursalBancaria.codigoPostal.$dirty">El campo es requerido</span>
+                        <span ng-show="formularioSucursalBancaria.codigoPostal.$error.pattern">El codigo postal debe contener cinco cifras del 0 al 9</span>
                     </div>
                     <div class="form-group col-md-5">
                         <label for="telefono">Telefono</label>
-                        <input id="telefono" name="telefono" type="text" ng-model="sucursalBancaria.telefono" class="form-control">
+                        <input id="telefono" name="telefono" type="text" ng-model="sucursalBancaria.telefono" class="form-control" ng-pattern="/^9[0-9]{8}$/">
+                        <span ng-show="formularioSucursalBancaria.telefono.$error.pattern">El telefono debe tener formato español</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5 col-md-offset-1">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="text" ng-model="sucursalBancaria.email" class="form-control">
+                        <input id="email" name="email" type="email" ng-model="sucursalBancaria.email" class="form-control">
+                        <span ng-show="formularioSucursalBancaria.email.$error.email">El formato del correo no es correcto</span> 
                     </div>
                     <div class="form-group col-md-5">
                         <label for="fechaCreacion">Fecha de creación</label>
@@ -69,8 +84,8 @@
             </form>
         </div>
         <div class="panel-footer text-right">
-            <button ng-click="insertar()" class="btn btn-primary" role="button" ng-hide="control === 'detail'">Insertar Sucursal Bancaria</button>
-            <button ng-click="modificar()" class="btn btn-primary" role="button" ng-hide="control === 'insertar'" >Guardar Cambios</button> 
+            <button ng-click="insertar()" class="btn btn-primary" ng-disabled="formularioSucursalBancaria.$invalid" role="button" ng-hide="control === 'detail'">Insertar Sucursal Bancaria</button>
+            <button ng-click="modificar()" class="btn btn-primary" ng-disabled="formularioSucursalBancaria.$invalid" role="button" ng-hide="control === 'insertar'" >Guardar Cambios</button> 
             <a href="{{cancelar}}" class="btn btn-danger" role="button">Cancelar</a>
         </div>
     </div>
