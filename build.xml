@@ -76,6 +76,8 @@
     <target name="desplegar" depends="dist">
         <taskdef resource="es/logongas/openshift/ant/antlib.xml" />
         
+        <delete dir="../banco_openshift" />
+        
         <gitcloneapplication    
             userName="spartancodewebdevelopers@gmail.com"
             password="spartancode1234"
