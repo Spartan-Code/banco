@@ -84,5 +84,32 @@
             privateKeyFile="./.ssh/id_rsa"
             path="../banco_openshift"
         />
+        
+        <move file="./dist/banco.war" tofile="../banco_openshift/webapps/ROOT.war"/>
+        
+        <delete file="../banco_openshift/pom.xml" />
+        <delete dir="../banco_openshift/src" />
+        
+        <git 
+            command="add" 
+            options="*" 
+            dir="../banco_openshift" 
+        />
+        
+        <git 
+            command="commit" 
+            options="-m 'desplegando banco en openshif'" 
+            dir="../banco_openshift" 
+        />
+        
+        <gitpushapplication
+            userName="spartancodewebdevelopers@gmail.com"
+            password="spartancode1234"
+            domainName="spartancode"
+            applicationName="banco" 
+            privateKeyFile="./.ssh/id_rsa"
+            path="../banco_openshift"
+        />
+        
     </target>
 </project>
