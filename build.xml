@@ -73,7 +73,7 @@
 	
     
 	
-    <target name="desplegar" depends="dist">
+      <target name="desplegar" depends="dist">
         <taskdef resource="es/logongas/openshift/ant/antlib.xml" />
         
         <delete dir="../banco_openshift" />
@@ -88,7 +88,6 @@
         />
         
         <move file="./dist/banco.war" tofile="../banco_openshift/webapps/ROOT.war"/>
-        <!--<move file="../banco_api/dist/banco_api.war" tofile="../banco_openshift/webapps/banco_api.war"/>-->
         
         <delete file="../banco_openshift/pom.xml" />
         <delete dir="../banco_openshift/src" />
